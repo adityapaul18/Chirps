@@ -1,9 +1,12 @@
 import './App.css';
+import Login from './components/Login';
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
   return (
     <div className="App">
-        <h1>welcome to chirp app</h1>
+        <Navbar/>
+        <Login/>
     </div>
   );
 }
