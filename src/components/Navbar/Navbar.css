@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 5px 0;
     background-color: rgb(68, 68, 255);
     color: white;
 }
@@ -14,4 +14,5 @@
 
 .icons {
     color: white;
+    padding: 10px;
 }
