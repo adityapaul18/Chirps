@@ -6,6 +6,7 @@ import {  BrowserRouter as Router,Switch,Route,Link} from "react-router-dom";
 import { auth } from './Firebase';
 import { useAuthState } from "react-firebase-hooks/auth"
 import Homefeed from './components/HomeFeed/Homefeed.js';
+import Inputpage from './components/Inputpage/Inputpage';
 
 function App() {
   const [user] = useAuthState(auth);
@@ -16,6 +17,9 @@ function App() {
             <div>
               <Navbar/>
             <Switch>
+              <Route path="/chirp">
+                <Inputpage />
+              </Route>
               <Route path="/profile">
                 <div>this is your profile</div>
               </Route>

@@ -24,9 +24,6 @@ function Navbar() {
             </div>
             <div className="header-right" >
             <IconButton>
-                {/* <AddIcon className="icons" /> */}
-            </IconButton>
-            <IconButton>
                 <Avatar onClick={signout} src={user.photoURL} />
             </IconButton>
             </div>

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { auth, db } from '../../Firebase'
 import './Inputpage.css'
+
 function Inputpage() {
     const [chirp,setchirp] =useState("")
     const [loct,setloct] =useState("")
@@ -26,11 +27,12 @@ function Inputpage() {
     return (
         <>
         <div className="inputpage" >
-                {/* <h1>New Chirp</h1> */}
             <form className="inputform">
-                <div><input type="text" value={chirp} onChange={(e) => setchirp(e.target.value)} /></div>
-                <div><input type="text" value={loct} onChange={(e) => setloct(e.target.value)} /></div>
-                <div><button type="submit" onClick={addchirp}>Chirp</button> </div>
+                <div>
+                    <div className="inputcontainers" ><input id="chirp" placeholder="add a chirp" type="text" value={chirp} onChange={(e) => setchirp(e.target.value)} /></div>
+                    <div className="inputcontainers" ><input placeholder="add location"  type="text" value={loct} onChange={(e) => setloct(e.target.value)} /></div>
+                </div>
+                <div><button className="submitbutton" type="submit" onClick={addchirp}>Chirp</button> </div>
             </form> 
         </div>
         </>

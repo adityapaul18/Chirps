@@ -1,13 +1,46 @@
 .inputpage{
-    display: flex;
-    flex-direction: column;
+    display: grid;
     align-items: center;
     margin: auto;
 }
 
 .inputform{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-direction: column;
+    height: 90vh;
     align-items: center;
+}
+.inputcontainers {
+    margin: 5px;
+    border: 1px black solid;
+    border-radius: 20px;
+    padding: 5px;
+    width: 70vw;
+}
+
+.submitbutton{  
+    background-color: rgb(68, 68, 255);
+    padding: 15px;
+    border-radius: 20px;
+    color: white;
+    font-size: 20px;
+    border: none;
+}
+input{
+    border: 0px solid;
+    width: 90%;
+    margin-left: 15px ;
+    outline: none;
+    text-align: center;
+}
+
+input::placeholder {   
+    /* Firefox, Chrome, Opera */ 
+    font-size: 15px;
+    text-align: center; 
+} 
+
+#chirp{
+    height: 30vh;
 }
