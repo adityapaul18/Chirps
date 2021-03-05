@@ -12,11 +12,11 @@
     align-items: center;
 }
 .inputcontainers {
-    margin: 5px;
+    margin:20px 5px ;
     border: 1px black solid;
     border-radius: 20px;
     padding: 5px;
-    width: 70vw;
+    width: 75vw;
 }
 
 .submitbutton{  
