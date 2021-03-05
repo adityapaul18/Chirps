@@ -3,8 +3,15 @@ import './Navbar.css'
 import { Avatar, IconButton } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
 import AddIcon from '@material-ui/icons/Add';
+import { auth } from '../../Firebase';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 function Navbar() { 
+    const signout = () => {
+        auth.signOut();
+    }
+
+    const [user] = useAuthState(auth);
     return (
         <div className="header">
             <div className="header-left" >
@@ -17,8 +24,10 @@ function Navbar() {
             </div>
             <div className="header-right" >
             <IconButton>
-                <AddIcon className="icons" />
-                <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG9Cpn5vxKV4sd6sNcK4mhsL5IibaQxPzNSg&usqp=CAU" />
+                {/* <AddIcon className="icons" /> */}
+            </IconButton>
+            <IconButton>
+                <Avatar onClick={signout} src={user.photoURL} />
             </IconButton>
             </div>
         </div>

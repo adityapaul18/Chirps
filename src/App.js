@@ -1,22 +1,26 @@
 import './App.css';
 import Login from './components/Login/Login';
 import Navbar from './components/Navbar/Navbar';
-import React, { useState } from "react";
+import React from "react";
 import {  BrowserRouter as Router,Switch,Route,Link} from "react-router-dom";
+import { auth } from './Firebase';
+import { useAuthState } from "react-firebase-hooks/auth"
+import Homefeed from './components/HomeFeed/Homefeed.js';
 
 function App() {
-    const user = useState(null);
+  const [user] = useAuthState(auth);
   return (
     <div className="App">
       <Router>
-        { user ? ( <Login/> ) : (
+        { !user ? ( <Login/> ) : (
             <div>
+              <Navbar/>
             <Switch>
               <Route path="/profile">
                 <div>this is your profile</div>
               </Route>
               <Route path="/">
-              <Navbar/>
+                <Homefeed/>
               </Route>
             </Switch>
           </div>
