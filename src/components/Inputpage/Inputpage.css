@@ -14,7 +14,7 @@
 .inputcontainers {
     margin:20px 5px ;
     border: 1px black solid;
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 5px;
     width: 75vw;
 }
@@ -42,5 +42,8 @@ input::placeholder {
 } 
 
 #chirp{
-    height: 30vh;
+    height: 15rem;
+}
+#loct{
+    height: 3rem;
 }

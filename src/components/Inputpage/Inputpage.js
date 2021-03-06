@@ -29,8 +29,8 @@ function Inputpage() {
         <div className="inputpage" >
             <form className="inputform">
                 <div>
-                    <div className="inputcontainers" ><input id="chirp" placeholder="add a chirp" type="text" value={chirp} onChange={(e) => setchirp(e.target.value)} /></div>
-                    <div className="inputcontainers" ><input placeholder="add location"  type="text" value={loct} onChange={(e) => setloct(e.target.value)} /></div>
+                    <div className="inputcontainers" ><input id="chirp" placeholder="add a chirp" autocomplete="off" value={chirp} onChange={(e) => setchirp(e.target.value)} /></div>
+                    <div className="inputcontainers" ><input id="loct" placeholder="add location"  autocomplete="off" value={loct} onChange={(e) => setloct(e.target.value)} /></div>
                 </div>
                 <div><button className="submitbutton" type="submit" onClick={addchirp}>Chirp</button> </div>
             </form> 

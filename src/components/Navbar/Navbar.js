@@ -5,7 +5,7 @@ import MenuIcon from '@material-ui/icons/Menu'
 import AddIcon from '@material-ui/icons/Add';
 import { auth } from '../../Firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
-
+import {Link} from 'react-router-dom'
 function Navbar() { 
     const signout = () => {
         auth.signOut();
@@ -16,15 +16,15 @@ function Navbar() {
         <div className="header">
             <div className="header-left" >
             <IconButton>
-                <MenuIcon className="icons"/>
+                <Link to='/chirp'> <MenuIcon className="icons"/></Link>
             </IconButton>
             </div>
             <div className="appname">
-                Chirps
+                <Link to='/'>Chirps</Link>
             </div>
             <div className="header-right" >
             <IconButton>
-                <Avatar onClick={signout} src={user.photoURL} />
+                <Avatar className="avatar" onClick={signout} src={user.photoURL} />
             </IconButton>
             </div>
         </div>

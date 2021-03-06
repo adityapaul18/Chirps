@@ -9,7 +9,11 @@
 
 .appname{
     font-size: 25px;
-    font-weight: bold;
+    font-weight: bold;   
+}
+a{
+    text-decoration: none;
+    color: white;
 }
 
 .icons {
