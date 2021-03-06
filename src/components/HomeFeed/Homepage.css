@@ -1,5 +1,6 @@
 .homefeed{
-    display: inline;
+    display: flex;
+    justify-content: space-around;
 }
 .chirp-body{
     background-color: blue;
@@ -7,6 +8,9 @@
 }
 
 @media (max-width:1000px){
+    .homefeed{
+        display: inline;
+    }
     .home-left{
         display: none;
     }

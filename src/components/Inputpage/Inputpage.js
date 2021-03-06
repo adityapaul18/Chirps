@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { auth, db } from '../../Firebase'
 import './Inputpage.css'
+import firebase from 'firebase'
 
 function Inputpage() {
     const [chirp,setchirp] =useState("")
@@ -16,6 +17,7 @@ function Inputpage() {
         db.collection("messages").add({
             user: user.displayName ,
             userpic: user.photoURL,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
             message: chirp ,
             location : loct
         });

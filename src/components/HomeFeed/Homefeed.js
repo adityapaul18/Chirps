@@ -1,20 +1,37 @@
-import React from 'react'
-import Inputpage from '../Inputpage/Inputpage'
+import React, { useEffect } from 'react'
+import { db } from '../../Firebase'
 import './Homepage.css'
+import { useCollection } from 'react-firebase-hooks/firestore';
+import Chirp from '../Chirps/Chirp';
+
 
 function Homefeed() {
+
+    const [chirps,loading] = useCollection(db.collection("messages").orderBy("timestamp","desc"))
+    useEffect(() => {
+        console.log(chirps?.docs());
+    },[])
+    
+
     return (
         <div className="homepage" >
             <div className="homefeed">
                 <div className="home-left" >userinfo</div>
                 <div className="home-mid" >
-                    posts
-                    <div className="chirp-body" >
-                        <div>aditya paul</div>
-                        <div>email id</div>
-                        <div>timestamp</div>
-                        <div>tweet</div>
-                    </div>
+                    {chirps?.docs.map((doc) => {
+                        const { message , timestamp , user , userpic , location } = doc.data();
+                        return(
+                            <Chirp
+                            key={doc.id}
+                            message={message}
+                            timestamp={timestamp}
+                            user={user}
+                            userimage={userpic}
+                            location={location}
+                            />
+                        )
+                    })}
+
                 </div>
                 <div className="home-right" >input form</div>
             </div>
