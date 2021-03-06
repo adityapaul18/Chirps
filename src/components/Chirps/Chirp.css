@@ -1,0 +1,38 @@
+.userimage{
+    border-radius: 50px;
+    width: 60px;
+}
+
+.chirp_box{
+    display: flex;
+    padding: 15px;
+    border: 1px solid black;
+    margin:10px 2px;
+    border-radius: 10px;
+}
+
+.chirpbox_details{
+    margin-left: 20px;
+}
+
+.chirpoptions{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.timedetatils{
+    font-size: 12px;
+}
+.loctdetails{
+    margin-bottom: 5px;
+}
+.noloctdetails{
+    margin-bottom: 5px;
+    height: 10px;
+}
+
+.messagedetails{
+    margin-top: 10px;
+    font-size: 15px;
+}

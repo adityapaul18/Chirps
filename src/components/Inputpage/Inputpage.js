@@ -1,19 +1,19 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { auth, db } from '../../Firebase'
 import './Inputpage.css'
 import firebase from 'firebase'
+import { useHistory } from 'react-router'
 
 function Inputpage() {
     const [chirp,setchirp] =useState("")
     const [loct,setloct] =useState("")
-
+    const history = useHistory();
     const [user] = useAuthState(auth);
-
-
-    const addchirp = (e) => {
+    const [check,setcheck] = useState(false)
+    const addchirp = async (e) => {
         e.preventDefault();
-
+        
         db.collection("messages").add({
             user: user.displayName ,
             userpic: user.photoURL,
@@ -21,9 +21,10 @@ function Inputpage() {
             message: chirp ,
             location : loct
         });
+        history.push('/');
         setchirp("");
         setloct("");
-    }
+    }  
 
 
     return (

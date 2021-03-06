@@ -3,6 +3,7 @@ import { db } from '../../Firebase'
 import './Homepage.css'
 import { useCollection } from 'react-firebase-hooks/firestore';
 import Chirp from '../Chirps/Chirp';
+import Inputpage from '../Inputpage/Inputpage';
 
 
 function Homefeed() {
@@ -33,7 +34,7 @@ function Homefeed() {
                     })}
 
                 </div>
-                <div className="home-right" >input form</div>
+                <div className="home-right" ><Inputpage/></div>
             </div>
         </div>
     )
