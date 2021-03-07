@@ -13,6 +13,7 @@
 
 .chirpbox_details{
     margin-left: 20px;
+    width: 100%;
 }
 
 .chirpoptions{
@@ -26,6 +27,11 @@
 }
 .loctdetails{
     margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+.MuiSvgIcon-root{
+    padding: 0px 3px ;
 }
 .noloctdetails{
     margin-bottom: 5px;

@@ -16,7 +16,7 @@ function Navbar() {
         <div className="header">
             <div className="header-left" >
             <IconButton>
-                <Link to='/chirp'> <MenuIcon className="icons"/></Link>
+                <MenuIcon className="icons" onClick={signout} />
             </IconButton>
             </div>
             <div className="appname">
@@ -24,7 +24,12 @@ function Navbar() {
             </div>
             <div className="header-right" >
             <IconButton>
-                <Avatar className="avatar" onClick={signout} src={user.photoURL} />
+                <Link to='/chirp'> <AddIcon className="icons"/></Link>
+            </IconButton>
+            <IconButton>
+            <Link to='/profile'>
+                <Avatar className="avatar" src={user.photoURL} />
+            </Link> 
             </IconButton>
             </div>
         </div>

@@ -1,5 +1,5 @@
 import { Avatar } from '@material-ui/core'
-import React from 'react'
+import React, { useState } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useCollection } from 'react-firebase-hooks/firestore'
 import { auth, db } from '../../Firebase'
@@ -21,14 +21,13 @@ function Profilepage() {
                     </div> 
                     <div>
                         joined {myuser.metadata.creationTime}                        
-                    </div> 
+                    </div>                     
                 </div>   
-            </div>
+            </div> 
             <div>
             {chirps?.docs.map((doc) => {
                         const { message , timestamp , user , userpic , location } = doc.data();
                         if(userpic === myuser.photoURL){
-
                             return(
                                 <Chirp
                                 key={doc.id}
@@ -39,7 +38,7 @@ function Profilepage() {
                                 location={location}
                                 />
                                 )
-                        }
+                            }
                     })}
             </div>
         </>
