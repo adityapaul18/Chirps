@@ -1,3 +1,5 @@
+## it's a social media app thatt im making to test up my grip on firebase and react skills
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
