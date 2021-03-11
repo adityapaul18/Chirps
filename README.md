@@ -1,4 +1,4 @@
-## it's a social media app thatt im making to test up my grip on firebase and react skills
+## it's a social media app that I'm making to test up my grip on firebase and react skills
 
 # Getting Started with Create React App
 
