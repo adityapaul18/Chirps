@@ -16,6 +16,9 @@ function Navbar() {
         <div className="header">
             <div className="header-left" >
             <IconButton>
+                <MenuIcon className="icons" onClick={signout} />
+            </IconButton>
+            <IconButton>
             <Link to='/profile'>
                 <Avatar className="avatar" src={user.photoURL} />
             </Link> 

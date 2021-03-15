@@ -14,6 +14,9 @@ function Chirp({message , timestamp , user , userimage , location}) {
         let l = str.length
         return str.substr(0, l-6) + str.substr(l-3,l);
     };
+    const deletepost = () => {
+        console.log("deleted")
+    }
     const dd1 = new Date(timestamp?.toDate()).toUTCString('en-US') ;
     const dd2 = new Date(timestamp?.toDate()).toLocaleTimeString('en-US') 
     return (
@@ -27,7 +30,7 @@ function Chirp({message , timestamp , user , userimage , location}) {
                 <div className="chirpoptions" >
                     <ThumbUpIcon/>
                     <ThumbDownAltIcon/>
-                    <DeleteIcon/>
+                    <DeleteIcon onClick={deletepost} />
                 </div>
             </div>
         </div>
