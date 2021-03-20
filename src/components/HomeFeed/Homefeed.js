@@ -4,6 +4,7 @@ import './Homepage.css'
 import { useCollection } from 'react-firebase-hooks/firestore';
 import Chirp from '../Chirps/Chirp';
 import Inputpage from '../Inputpage/Inputpage';
+import Sidemenu from '../Sidemenu.js';
 
 
 function Homefeed() {
@@ -17,7 +18,9 @@ function Homefeed() {
     return (
         <div className="homepage" >
             <div className="homefeed">
-                <div className="home-left" >userinfo</div>
+                <div className="home-left" >
+                    <Sidemenu/>
+                </div>
                 <div className="home-mid" >
                     {chirps?.docs.map((doc) => {
                         const { message , timestamp , user , userpic , location } = doc.data();
