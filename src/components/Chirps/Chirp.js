@@ -4,8 +4,9 @@ import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import ThumbDownAltIcon from '@material-ui/icons/ThumbDownAlt';
 import DeleteIcon from '@material-ui/icons/Delete';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
+import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@material-ui/core/';
 
-function Chirp({message , timestamp , user , userimage , location}) {
+function Chirp({message , timestamp , user , userimage , location , pic}) {
     
     const cutdate = (str, n) => {
         return str?.length > n ? str.substr(0, n - 1) : str;
@@ -17,6 +18,7 @@ function Chirp({message , timestamp , user , userimage , location}) {
     const deletepost = () => {
         console.log("deleted")
     }
+    console.log(pic);
     const dd1 = new Date(timestamp?.toDate()).toUTCString('en-US') ;
     const dd2 = new Date(timestamp?.toDate()).toLocaleTimeString('en-US') 
     return (
@@ -25,6 +27,13 @@ function Chirp({message , timestamp , user , userimage , location}) {
             <div className="chirpbox_details">
                 <div className="userdetails" ><b>{user}</b> <span className="timedetatils">{cutdate(dd1,17)} {cutdate2(dd2)}  </span></div>
                 {location ? (<div className="loctdetails" > <LocationOnIcon/> {location}</div>) : (<div className="noloctdetails" > </div>) }
+                {pic ? (
+                <>
+                    <img src={pic} />
+                </>
+            ) :(
+                <div> no image</div>
+            )}
                 <hr/>
                 <div className="messagedetails" >{message}</div>
                 <div className="chirpoptions" >

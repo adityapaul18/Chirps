@@ -23,7 +23,7 @@ function Homefeed() {
                 </div>
                 <div className="home-mid" >
                     {chirps?.docs.map((doc) => {
-                        const { message , timestamp , user , userpic , location } = doc.data();
+                        const { message , timestamp , user , userpic , location , image } = doc.data();
                         return(
                             <Chirp
                             key={doc.id}
@@ -32,6 +32,7 @@ function Homefeed() {
                             user={user}
                             userimage={userpic}
                             location={location}
+                            pic={image}
                             />
                         )
                     })}
