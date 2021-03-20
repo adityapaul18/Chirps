@@ -20,3 +20,121 @@ a{
     color: white;
     padding: 10px;
 }
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,700&display=swap');
+
+
+.mainbody{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar{
+    /* background-color: black; */
+    height: 70px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+}
+.menu-bar{
+    padding-left: 20px;
+}
+
+.menu-bars {
+    font-size: 1.5rem;
+    background-color: none;
+    font-family: 'Lato', sans-serif;
+    padding-left: 10px;
+    padding-top: -10px;
+}
+
+.nav-menu{
+    height: 100vh;
+    background-color: #000b4b;
+    width: 300px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    transition: 500ms;
+    font-family: 'Lato', sans-serif;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    z-index: 5;
+}
+
+.nav-menu::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-menu.active::-webkit-scrollbar {
+    display: none;
+  }
+.nav-menu.active{
+    position: absolute;
+    left: 0;
+    transition: 350ms;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.nav-text{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 8px 0px 8px 16px;
+    list-style:none ;
+    height: 80px;
+}
+
+.nav-text a {
+    text-decoration: none;
+    color: white;
+    width: 95%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    border-radius: 4px;
+    font-size: 27px;
+}
+
+.nav-text a:hover{
+    transition: 300ms;
+    font-size:24px;
+    background-color: cyan;
+}
+
+.nav-menu-items{
+    width: 100%;
+}
+
+.navbar-toggle{
+    background-color: #000b4b;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+span{
+    margin-left:16px ;
+}
+
+.list{
+    margin-top: 100px;
+}
+
+.makesname{
+    color: beige;
+    margin-bottom: -30px;
+}
+
+.lower{
+    padding-bottom: 30px;
+}

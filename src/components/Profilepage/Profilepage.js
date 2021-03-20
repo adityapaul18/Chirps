@@ -15,7 +15,7 @@ function Profilepage() {
         <>
             <div className="profilecontainer" >
                 <div>
-                    <Avatar src={myuser.photoURL} />  <span>{myuser.displayName}</span>
+                    <img src={myuser.photoURL} />  <span>{myuser.displayName}</span>
                     <div>
                         {myuser.email}
                     </div> 

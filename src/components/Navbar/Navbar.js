@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Navbar.css'
 import { Avatar, IconButton } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
@@ -10,18 +10,36 @@ function Navbar() {
     const signout = () => {
         auth.signOut();
     }
-
+    
     const [user] = useAuthState(auth);
+    const [ sidebar, setSidebar ] = useState(0);
+    const showSidebar = () => setSidebar(!sidebar)
     return (
         <div className="header">
+        <nav className = {sidebar ? 'nav-menu active' : 'nav-menu'} >
+                <div className="navbar-toggle">
+                    <Avatar onClick={showSidebar} src={user.photoURL} />                    
+                <div>
+                    {user.displayName}
+                    <div>your profile</div>
+                </div>
+                </div>
+                <div className="list">
+                    <ul>
+                        <li>github code</li>
+                        <li>github code</li>
+                        <li>github code</li>
+                        <li>github code</li>
+                        <li>github code</li>
+                    </ul>
+                </div>
+            <div className="lower">
+               made  by aditya paul 
+            </div>
+        </nav>
             <div className="header-left" >
-            <IconButton>
-                <MenuIcon className="icons" onClick={signout} />
-            </IconButton>
-            <IconButton>
-            <Link to='/profile'>
-                <Avatar className="avatar" src={user.photoURL} />
-            </Link> 
+            <IconButton >
+                <Avatar onClick={showSidebar} className="avatar" src={user.photoURL} />
             </IconButton>
             </div>
             <div className="appname">
