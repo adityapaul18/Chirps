@@ -26,19 +26,18 @@ function Profilepage() {
             </div> 
             <div>
             {chirps?.docs.map((doc) => {
-                        const { message , timestamp , user , userpic , location } = doc.data();
-                        if(userpic === myuser.photoURL){
-                            return(
-                                <Chirp
-                                key={doc.id}
-                                message={message}
-                                timestamp={timestamp}
-                                user={user}
-                                userimage={userpic}
-                                location={location}
-                                />
-                                )
-                            }
+                        const { message , timestamp , user , userpic , location , image } = doc.data();
+                        return(
+                            <Chirp
+                            key={doc.id}
+                            message={message}
+                            timestamp={timestamp}
+                            user={user}
+                            userimage={userpic}
+                            location={location}
+                            pic={image}
+                            />
+                        )
                     })}
             </div>
         </>

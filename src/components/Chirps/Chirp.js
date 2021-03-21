@@ -42,7 +42,7 @@ function Chirp({key, message , timestamp , user , userimage , location , pic }) 
                 <div className="chirpoptions" >
                     <ThumbUpIcon/>
                     <ThumbDownAltIcon/>
-                    <DeleteIcon onClick={deletepost} />
+                    <Button  onClick={deletepost} >delete</Button>
                 </div>
         </>
     )
