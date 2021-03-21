@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { auth, db } from '../../Firebase'
 import './Inputpage.css'
@@ -12,7 +12,6 @@ function Inputpage() {
     const [img,setimg] =useState("")
     const history = useHistory();
     const [user] = useAuthState(auth);
-    const [check,setcheck] = useState(false)
     const addchirp = async (e) => {
         e.preventDefault();
         

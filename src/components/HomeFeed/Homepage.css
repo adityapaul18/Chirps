@@ -6,8 +6,13 @@
     background-color: blue;
     align-items: center;
 }
-
+.home-mid{
+    width: 40%;
+}
 @media (max-width:1000px){
+    .home-mid{
+        width: 100%;
+    }
     .homefeed{
         display: inline;
     }
