@@ -4,7 +4,7 @@ import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import ThumbDownAltIcon from '@material-ui/icons/ThumbDownAlt';
 import DeleteIcon from '@material-ui/icons/Delete';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
-import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@material-ui/core/';
+import { Button } from '@material-ui/core/';
 import { db } from '../../Firebase';
 
 function Chirp({key, message , timestamp , user , userimage , location , pic }) {

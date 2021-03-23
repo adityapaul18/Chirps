@@ -138,3 +138,6 @@ span{
 .lower{
     padding-bottom: 30px;
 }
+.MuiButton-root{
+    color: rgb(131, 131, 131)  !important;
+}

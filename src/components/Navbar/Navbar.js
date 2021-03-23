@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
 import './Navbar.css'
-import { Avatar, IconButton } from '@material-ui/core'
+import { Avatar, Button, IconButton } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
 import AddIcon from '@material-ui/icons/Add';
 import { auth } from '../../Firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import {Link} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
 function Navbar() { 
     const signout = () => {
         auth.signOut();
     }
-    
+    const history= useHistory();
     const [user] = useAuthState(auth);
     const [ sidebar, setSidebar ] = useState(0);
     const showSidebar = () => setSidebar(!sidebar)
@@ -21,9 +21,11 @@ function Navbar() {
                     <Avatar onClick={showSidebar} src={user.photoURL} />                    
                 <div>
                     {user.displayName}
-                    <div>your profile</div>
                 </div>
+                    <Button onClick={() => {history.push("./profile")}}>profile</Button>
+                    <Button onClick={signout}>logout</Button>
                 </div>
+                    <Button onClick={() => {history.push("./")}}>Home</Button>
                 <div className="list">
                     <ul>
                         <li>github code</li>
