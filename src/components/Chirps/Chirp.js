@@ -5,10 +5,11 @@ import ThumbDownAltIcon from '@material-ui/icons/ThumbDownAlt';
 import DeleteIcon from '@material-ui/icons/Delete';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import { Button } from '@material-ui/core/';
-import { db } from '../../Firebase';
+import { auth, db } from '../../Firebase';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 function Chirp({_id, message , timestamp , user , userimage , location , pic }) {
-    
+    const [myuser] = useAuthState(auth);
     const cutdate = (str, n) => {
         return str?.length > n ? str.substr(0, n - 1) : str;
     };
@@ -36,14 +37,14 @@ function Chirp({_id, message , timestamp , user , userimage , location , pic }) 
                     <img  src={pic} alt="" />
                 </div>
             ) :(
-                <div> no image</div>
+                <div></div>
             )}
         <hr/>
                 <div className="messagedetails" >{message}</div>
                 <div className="chirpoptions" >
                     <ThumbUpIcon/>
                     <ThumbDownAltIcon/>
-                    <Button  onClick={deletepost} >delete</Button>
+                    {myuser.photoURL === userimage ? (<><Button  onClick={deletepost} >delete</Button></>) : (<></>)}
                 </div>
         </>
     )
