@@ -75,7 +75,7 @@ a{
     display: none;
   }
 .nav-menu.active{
-    position: absolute;
+    position: fixed;
     left: 0;
     transition: 350ms;
     overflow-y: scroll;

@@ -1,5 +1,4 @@
-import { Avatar } from '@material-ui/core'
-import React, { useState } from 'react'
+import React from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useCollection } from 'react-firebase-hooks/firestore'
 import { auth, db } from '../../Firebase'
@@ -15,7 +14,7 @@ function Profilepage() {
         <>
             <div className="profilecontainer" >
                 <div>
-                    <img src={myuser.photoURL} />  <span>{myuser.displayName}</span>
+                    <img src={myuser.photoURL} alt={myuser.displayName}/>  <span>{myuser.displayName}</span>
                     <div>
                         {myuser.email}
                     </div> 
