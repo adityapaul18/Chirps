@@ -7,7 +7,7 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 import { Button } from '@material-ui/core/';
 import { db } from '../../Firebase';
 
-function Chirp({key, message , timestamp , user , userimage , location , pic }) {
+function Chirp({_id, message , timestamp , user , userimage , location , pic }) {
     
     const cutdate = (str, n) => {
         return str?.length > n ? str.substr(0, n - 1) : str;
@@ -17,6 +17,7 @@ function Chirp({key, message , timestamp , user , userimage , location , pic }) 
         return str.substr(0, l-6) + str.substr(l-3,l);
     };
     const deletepost = () => {
+        db.collection("messages").doc(_id).delete();
         console.log("deleted")
     }
     console.log(timestamp)

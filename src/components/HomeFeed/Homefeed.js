@@ -26,6 +26,7 @@ function Homefeed() {
                         const { message , timestamp , user , userpic , location , image } = doc.data();
                         return(
                             <Chirp
+                            _id={doc.id}
                             key={doc.id}
                             message={message}
                             timestamp={timestamp}
