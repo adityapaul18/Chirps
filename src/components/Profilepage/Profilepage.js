@@ -29,6 +29,7 @@ function Profilepage() {
                         if(userpic === myuser.photoURL){
                             return(
                                 <Chirp
+                                _id={doc.id}
                                 key={doc.id}
                                 message={message}
                                 timestamp={timestamp}

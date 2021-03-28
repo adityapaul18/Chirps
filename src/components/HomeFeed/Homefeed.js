@@ -18,8 +18,10 @@ function Homefeed() {
     return (
         <div className="homepage" >
             <div className="homefeed">
+                <div>
                 <div className="home-left" >
                     <Sidemenu/>
+                </div>
                 </div>
                 <div className="home-mid" >
                     {chirps?.docs.map((doc) => {
@@ -39,7 +41,9 @@ function Homefeed() {
                     })}
 
                 </div>
+                <div>
                 <div className="home-right" ><Inputpage/></div>
+                </div>
             </div>
         </div>
     )
