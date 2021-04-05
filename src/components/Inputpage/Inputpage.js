@@ -35,9 +35,10 @@ function Inputpage() {
         <div className="inputpage" >
             <form className="inputform">
                 <div>
+                    <div onClick={() => {setimg("")}} ><img className="select_image" src={img || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpwbOTPYc5-lT_XmX__i6XBv4IRjC3iWhJhA&usqp=CAU"} /></div>
                     <div className="inputcontainers" ><input id="chirp" placeholder="add a chirp" autocomplete="off" value={chirp} onChange={(e) => setchirp(e.target.value)} /></div>
                     <div className="inputcontainers" ><input id="loct" placeholder="add location"  autocomplete="off" value={loct} onChange={(e) => setloct(e.target.value)} /></div>
-                    <div className="inputcontainers" ><FileBase type="file" calue={img} multiple={false} onDone={({ base64 }) => setimg(base64)} /> </div>
+                    <div ><FileBase type="file" calue={img} multiple={false} onDone={({ base64 }) => setimg(base64)} /> </div>
                 </div>
                 <div><button className="submitbutton" type="submit" onClick={addchirp}>Chirp</button> </div>
             </form> 
