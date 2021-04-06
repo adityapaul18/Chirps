@@ -52,6 +52,9 @@ input::placeholder {
 
 .select_image{
     height: auto;
-    width: 22.7rem;
     cursor: pointer;
+    width: 75vw;
+    max-width: 350px;
+    margin: auto;
+    display: flex;
 }
