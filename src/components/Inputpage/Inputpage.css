@@ -43,12 +43,12 @@ input::placeholder {
     text-align: center; 
 } 
 
-#chirp{
-    /* height: 3rem; */
+/* #chirp{
+    height: 3rem;
 }
 #loct{
-    /* height: 3rem; */
-}
+    height: 3rem;
+} */
 
 .select_image{
     height: auto;
