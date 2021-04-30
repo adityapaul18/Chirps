@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './Navbar.css'
 import { Avatar, Button, IconButton } from '@material-ui/core'
+import image from "../../images/head.png"
 import MenuIcon from '@material-ui/icons/Menu'
 import AddIcon from '@material-ui/icons/Add';
 import { auth } from '../../Firebase';
@@ -15,6 +16,7 @@ function Navbar() {
     const [ sidebar, setSidebar ] = useState(0);
     const showSidebar = () => setSidebar(!sidebar)
     return (
+        <div className="mainhead">
         <div className="header">
         <nav className = {sidebar ? 'nav-menu active' : 'nav-menu'} >
                 <div className="navbar-toggle">
@@ -39,6 +41,7 @@ function Navbar() {
                made  by aditya paul 
             </div>
         </nav>
+            <div className="header">
             <div className="header-left" >
             <IconButton >
                 <Avatar onClick={showSidebar} className="avatar" src={user.photoURL} />
@@ -52,7 +55,11 @@ function Navbar() {
                 <Link to='/chirp'> <AddIcon className="icons"/></Link>
             </IconButton>
             </div>
+            </div>
         </div>
+        <img src={image} alt="nohead"/>
+        </div>
+
     )
 }
 

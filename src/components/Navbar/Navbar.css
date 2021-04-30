@@ -1,3 +1,11 @@
+.mainhead{
+    width: 100%;
+    display: flex;
+}
+.mainhead > img {
+    margin: auto;
+    height: 120px;
+}
 .header{
     display: flex;
     justify-content: space-between;
@@ -5,6 +13,7 @@
     padding: 5px 0;
     background-color: rgb(68, 68, 255); 
     color: white;
+    width: 100%;
 }
 
 .appname{
@@ -140,4 +149,10 @@ span{
 }
 .MuiButton-root{
     color: rgb(131, 131, 131)  !important;
+}
+
+@media(min-width:800px){
+    .header{
+        display: none;
+    }
 }
