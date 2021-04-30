@@ -5,7 +5,7 @@ import { useCollection } from 'react-firebase-hooks/firestore';
 import Chirp from '../Chirps/Chirp';
 import Inputpage from '../Inputpage/Inputpage';
 import Sidemenu from '../Sidemenu/Sidemenu.js';
-
+import image from "../../images/web/1.png"
 
 function Homefeed() {
 

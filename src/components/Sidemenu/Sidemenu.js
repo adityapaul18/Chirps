@@ -15,10 +15,9 @@ function Sidemenu() {
     return (
         <div className="sidemenu_main">
            <div className="sidemenu_top">
-                    <Avatar src={user.photoURL} />                    
+                    <Avatar className="sidemenu_avatar" src={user.photoURL} />                    
                 <div>
-                    {user.displayName}
-                    <div>your profile</div>
+                    <span className="user__image" >{user.displayName}</span>
                 </div>
                 </div>
                 <div className="list">
@@ -33,7 +32,7 @@ function Sidemenu() {
             <div >
             <Button onClick={signout}>logout</Button>
             </div>
-               made  by aditya paul 
+            Made By Aditya Paul 
         </div>
     )
 }

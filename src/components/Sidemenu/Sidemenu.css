@@ -3,6 +3,8 @@
     flex-direction: column;
     margin: auto;
     width: 100%;
+    height: 90%;
+    border-radius: 20px;
 }
 .sidemenu_top{
     display: flex;
@@ -10,4 +12,14 @@
     align-items: center;
     margin: auto;
     width: 100%;
+}
+.sidemenu_avatar{
+    width: 130px !important;
+    height: auto !important;
+    margin-top: -160px;
+    margin-bottom: 10px;
+}
+.user__image{
+font-weight: 600;
+font-size: 19px ;
 }
