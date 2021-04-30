@@ -4,7 +4,7 @@ import './Homepage.css'
 import { useCollection } from 'react-firebase-hooks/firestore';
 import Chirp from '../Chirps/Chirp';
 import Inputpage from '../Inputpage/Inputpage';
-import Sidemenu from '../Sidemenu.js';
+import Sidemenu from '../Sidemenu/Sidemenu.js';
 
 
 function Homefeed() {
@@ -13,12 +13,11 @@ function Homefeed() {
     useEffect(() => {
         console.log(chirps?.docs());
     },[])
-    
 
     return (
         <div className="homepage" >
             <div className="homefeed">
-                <div>
+                <div className="left_container">
                 <div className="home-left" >
                     <Sidemenu/>
                 </div>

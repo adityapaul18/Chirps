@@ -10,12 +10,15 @@
     width: 40%;
 }
 .home-left{
+    padding: 0 58px;
     position: sticky;
-    top: 100px;
+    top: 150px;
+    height: 550px;
+    background-color: rgba(173, 173, 173, 0.281);
 }
 .home-right{
     position: sticky;
-    top: 100px;
+    top: 120px;
 }
 @media (max-width:1000px){
     .home-mid{

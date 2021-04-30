@@ -1,0 +1,13 @@
+.sidemenu_main{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 100%;
+}
+.sidemenu_top{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+}
