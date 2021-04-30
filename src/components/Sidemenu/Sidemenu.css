@@ -1,5 +1,6 @@
 .sidemenu_main{
     display: flex;
+    justify-content: space-evenly;
     flex-direction: column;
     margin: auto;
     width: 100%;
@@ -8,6 +9,7 @@
 }
 .sidemenu_top{
     display: flex;
+    justify-content: space-evenly;
     flex-direction: column;
     align-items: center;
     margin: auto;
@@ -16,10 +18,37 @@
 .sidemenu_avatar{
     width: 130px !important;
     height: auto !important;
-    margin-top: -160px;
+    margin-top: -140px;
     margin-bottom: 10px;
 }
 .user__image{
 font-weight: 600;
 font-size: 19px ;
+}
+.sidemenu__list > .MuiButton-root{
+    margin-top: 20px;
+    background-color: #0166C0 !important;
+    width: 140% !important;
+    color: honeydew !important;
+}
+.MuiButton-root > span {
+    align-items: center;
+    margin: auto;
+}
+.sidemenu__list{
+    align-items: flex-start;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sidemenu_bottom{
+    margin-bottom: -20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidemenu_bottom .MuiButton-root > span {
+    color: rgba(255, 1, 1, 0.699) !important;
+    font-weight: 400;
 }

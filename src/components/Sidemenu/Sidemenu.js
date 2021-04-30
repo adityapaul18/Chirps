@@ -19,20 +19,18 @@ function Sidemenu() {
                 <div>
                     <span className="user__image" >{user.displayName}</span>
                 </div>
-                </div>
-                <div className="list">
-                    <ul>
-                        <li>github code</li>
-                        <li>github code</li>
-                        <li>github code</li>
-                        <li>github code</li>
-                        <li>github code</li>
-                    </ul>
-                </div>
-            <div >
-            <Button onClick={signout}>logout</Button>
+                <div className="sidemenu__list">
+                <Button variant="contained">Home</Button>
+                <Button>Profile</Button>
+                <Button>Github</Button>
+                <Button>Contact </Button>
             </div>
+            </div>
+            
+            <div className="sidemenu_bottom" >
+            <Button onClick={signout}>logout</Button>
             Made By Aditya Paul 
+            </div>
         </div>
     )
 }
