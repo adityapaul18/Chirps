@@ -1,7 +1,9 @@
 import React from 'react'
 import "./Login.css"
-import logo from "../../images/chirplog.png"
+import logo from "../../images/wlogo.png"
 import {auth, provider} from '../../Firebase.js';
+import { Button } from '@material-ui/core';
+
 
 function Login() {
     const signin = (e) => {
@@ -16,7 +18,7 @@ function Login() {
                     <h1 className="appheader" >Chirps-App</h1>
                 </div>
             </div>  
-                <button className="loginbutton" onClick={signin} >Login with Google</button>
+                <Button variant="contained" className="loginbutton" onClick={signin} >Login with Google</Button>
         </div>
     )
 }
