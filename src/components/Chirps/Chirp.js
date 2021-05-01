@@ -25,6 +25,8 @@ function Chirp({_id, message , timestamp , user , userimage , location , pic }) 
     const dd1 = new Date(timestamp?.toDate()).toUTCString('en-US') ;
     const dd2 = new Date(timestamp?.toDate()).toLocaleTimeString('en-US') 
     return (<>
+    
+    <div className="post_box">
         <div className="chirp_box">
             <div><img className="userimage" src={userimage} alt="sdfsdf" /></div>
             <div className="chirpbox_details">
@@ -39,14 +41,13 @@ function Chirp({_id, message , timestamp , user , userimage , location , pic }) 
             ) :(
                 <div></div>
             )}
-        <hr/>
+    </div>
                 <div className="messagedetails" >{message}</div>
                 <div className="chirpoptions" >
-                    <ThumbUpIcon/>
-                    <ThumbDownAltIcon/>
-                    {myuser.photoURL === userimage ? (<><Button  onClick={deletepost} ><DeleteIcon/></Button></>) : (<></>)}
+                   <Button className="likebtn"> <ThumbUpIcon/>Like</Button>
+                    {myuser.photoURL === userimage ? (<><Button  onClick={deletepost} ><DeleteIcon/>Delete</Button></>) : (<></>)}
                 </div>
-        </>
+    </>
     )
 }
 

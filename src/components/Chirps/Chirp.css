@@ -6,22 +6,46 @@
 .chirp_box{
     display: flex;
     padding: 15px;
-    /* border: 1px solid black; */
     margin:10px 2px;
-    border-radius: 10px;
 }
 
+.post_box{
+    border-radius: 10px;
+    background-color: rgba(173, 173, 173, 0.205);
+    margin: 0 -25px;
+    margin-left: 25px;
+    padding-bottom: 20px;
+}
 .chirpbox_details{
     margin-left: 20px;
     width: 100%;
 }
 
 .chirpoptions{
-    margin-top: 20px;
+    margin: 20px 0;
     display: flex;
     justify-content: space-evenly;
 }
 
+.chirpoptions > p > span {
+    margin-left: 15px;
+}
+.chirpoptions > .MuiButton-root > span {
+    color: black;
+    display: flex;
+    align-items: center;
+}
+.chirpoptions > .MuiButton-root > span > .MuiSvgIcon-root {
+    color: #E22E2E !important;
+    margin-right: 10px;
+}
+.chirpoptions > .likebtn > span  > .MuiSvgIcon-root {
+    color: #0166C0 !important;
+}
+.chirpoptions > p {
+    display: flex;
+    align-items: center;
+}
 .timedetatils{
     font-size: 12px;
 }
