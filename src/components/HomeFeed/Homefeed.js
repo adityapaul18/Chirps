@@ -5,7 +5,7 @@ import { useCollection } from 'react-firebase-hooks/firestore';
 import Chirp from '../Chirps/Chirp';
 import Inputpage from '../Inputpage/Inputpage';
 import Sidemenu from '../Sidemenu/Sidemenu.js';
-import image from "../../images/web/1.png"
+import Spinner from 'react-spinkit'
 
 function Homefeed() {
 
@@ -23,7 +23,7 @@ function Homefeed() {
                 </div>
                 </div>
                 <div className="home-mid" >
-                    {chirps?.docs.map((doc) => {
+                    {loading ? <div className="loader" ><Spinner name="wandering-cubes" color="#0166C0"/></div> : <>{chirps?.docs.map((doc) => {
                         const { message , timestamp , user , userpic , location , image } = doc.data();
                         return(
                             <Chirp
@@ -37,7 +37,8 @@ function Homefeed() {
                             pic={image}
                             />
                         )
-                    })}
+                    })}</> }
+                    
 
                 </div>
                 <div>

@@ -36,10 +36,10 @@ function Inputpage() {
         <div className="inputpage" >
             <form className="inputform">
                 <div>
-                    <div className="post_imgcont" onClick={() => {setimg("")}} style={{backgroundImage: `url(${img || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpwbOTPYc5-lT_XmX__i6XBv4IRjC3iWhJhA&usqp=CAU"})`}}></div>
+                    <div className="post_imgcont" onClick={() => {setimg("")}} style={{backgroundImage: `url(${img || "https://firebase.google.com/images/social.png"})`}}></div>
                     <div className="inputcontainers" ><input id="chirp" placeholder="Whats on your mind ?" autocomplete="off" value={chirp} onChange={(e) => setchirp(e.target.value)} /></div>
                     <div className="inputcontainers" ><input id="loct" placeholder="Add location"  autocomplete="off" value={loct} onChange={(e) => setloct(e.target.value)} /></div>
-                    <div ><FileBase type="file" value={img} multiple={false} onDone={({ base64 }) => setimg(base64)} /> </div>
+                    <div className="inputimager"><FileBase type="file" value={img} multiple={false} onDone={({ base64 }) => setimg(base64)} /> </div>
                 </div>
                 <div className="submit_button"><Button variant="contained" className="submitbutton" type="submit" onClick={addchirp}>Chirp</Button> </div>
             </form> 

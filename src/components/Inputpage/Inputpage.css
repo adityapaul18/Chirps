@@ -9,7 +9,7 @@
     display: flex;
     /* justify-content: space-evenly; */
     flex-direction: column;
-    height: 90%;
+    height: 100%;
     align-items: center;
 }
 .inputcontainers {
@@ -52,6 +52,9 @@ input::placeholder {
 #loct{
     height: 3rem;
 } */
+.inputimager{
+    margin-bottom: 20px;
+}
 
 .select_image{
     height: auto;

@@ -4,6 +4,7 @@ import { auth } from '../../Firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import "./Sidemenu.css"
 import { useHistory } from 'react-router';
+import { Link } from 'react-router-dom';
 
 function Sidemenu() {    
     const history = useHistory();
@@ -21,8 +22,8 @@ function Sidemenu() {
                 <div className="sidemenu__list">
                 <Button onClick={() => {history.push("./")}} variant="contained">Home</Button>
                 <Button onClick={() => {history.push("./profile")}} variant="contained">Profile</Button>
-                <Button variant="contained">Github</Button>
-                <Button variant="contained">Contact </Button>
+                <Button variant="contained"><a href="https://github.com/adityapaul18/Chirps">Github</a></Button>
+                <Button variant="contained"><a href="https://adityapaul.herokuapp.com/">Contact</a></Button>
             </div>
             </div>
             

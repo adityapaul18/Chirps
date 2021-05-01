@@ -25,6 +25,12 @@
 font-weight: 600;
 font-size: 19px ;
 }
+.sidemenu__list > a > .MuiButton-root{
+    margin-top: 20px;
+    background-color: #0166C0 !important;
+    width: 140% !important;
+    color: honeydew !important;
+}
 .sidemenu__list > .MuiButton-root{
     margin-top: 20px;
     background-color: #0166C0 !important;
