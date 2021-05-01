@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import './Navbar.css'
 import { Avatar, Button, IconButton } from '@material-ui/core'
 import image from "../../images/head.png"
-import MenuIcon from '@material-ui/icons/Menu'
 import AddIcon from '@material-ui/icons/Add';
 import { auth } from '../../Firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';

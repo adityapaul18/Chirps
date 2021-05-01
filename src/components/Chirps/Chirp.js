@@ -29,7 +29,7 @@ function Chirp({_id, message , timestamp , user , userimage , location , pic }) 
         <div className="chirp_box">
             <div><img className="userimage" src={userimage} alt="sdfsdf" /></div>
             <div className="chirpbox_details">
-                <div className="userdetails" ><b>{user}</b> <span className="timedetatils">{cutdate(dd1,17)} {cutdate2(dd2)}  </span></div>
+                <div className="userdetails" ><b>{user}</b> <p className="timedetatils">{cutdate(dd1,17)} {cutdate2(dd2)}  </p></div>
                 {location ? (<div className="loctdetails" > <LocationOnIcon/> {location}</div>) : (<div className="noloctdetails" > </div>) }
             </div>
         </div>
@@ -44,7 +44,7 @@ function Chirp({_id, message , timestamp , user , userimage , location , pic }) 
     </div>
                 <div className="chirpoptions" >
                    <Button className="likebtn"> <ThumbUpIcon/>Like</Button>
-                    {myuser.photoURL === userimage ? (<><Button  onClick={deletepost} ><DeleteIcon/>Delete</Button></>) : (<></>)}
+                    {myuser.photoURL === userimage ? (<p onClick={deletepost}><Button ><DeleteIcon/>Delete</Button></p>) : (<></>)}
                 </div>
     </>
     )

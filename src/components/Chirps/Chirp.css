@@ -36,10 +36,16 @@
     align-items: center;
     z-index: -5;
 }
+.chirpoptions > p > .MuiButton-root > span {
+    color: black;
+    display: flex;
+    align-items: center;
+    z-index: -5;
+}
 .chirpoptions > .MuiButton-root{
     z-index: -1;
 }
-.chirpoptions > .MuiButton-root > span > .MuiSvgIcon-root {
+.chirpoptions > p > .MuiButton-root > span > .MuiSvgIcon-root {
     color: #E22E2E !important;
     margin-right: 10px;
 }
@@ -53,8 +59,12 @@
 .timedetatils{
     font-size: 12px;
 }
+.loctdetails > .MuiSvgIcon-root {
+    color: #0166C0 ;
+}
 .loctdetails{
-    margin-bottom: 5px;
+    margin:15px 0;
+    margin-bottom: 0;
     display: flex;
     align-items: center;
 }
@@ -62,13 +72,14 @@
     padding: 0px 3px ;
 }
 .noloctdetails{
-    margin-bottom: 5px;
+    margin:15px 0;
     height: 10px;
 }
 
 .messagedetails{
     margin-top: 10px;
     font-size: 15px;
+    padding:0 25px;
 }
 .postimg_container{
     width:auto;
