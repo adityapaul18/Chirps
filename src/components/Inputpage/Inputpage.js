@@ -5,6 +5,7 @@ import './Inputpage.css'
 import firebase from 'firebase'
 import { useHistory } from 'react-router'
 import FileBase from 'react-file-base64';
+import { Button } from '@material-ui/core'
 
 function Inputpage() {
     const [chirp,setchirp] =useState("")
@@ -30,17 +31,17 @@ function Inputpage() {
     }  
 
 
-    return (
+    return ( 
         <>
         <div className="inputpage" >
             <form className="inputform">
                 <div>
-                    <div onClick={() => {setimg("")}} ><img className="select_image" src={img || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpwbOTPYc5-lT_XmX__i6XBv4IRjC3iWhJhA&usqp=CAU"} /></div>
-                    <div className="inputcontainers" ><input id="chirp" placeholder="add a chirp" autocomplete="off" value={chirp} onChange={(e) => setchirp(e.target.value)} /></div>
-                    <div className="inputcontainers" ><input id="loct" placeholder="add location"  autocomplete="off" value={loct} onChange={(e) => setloct(e.target.value)} /></div>
-                    <div ><FileBase type="file" calue={img} multiple={false} onDone={({ base64 }) => setimg(base64)} /> </div>
+                    <div className="post_imgcont" onClick={() => {setimg("")}} style={{backgroundImage: `url(${img || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpwbOTPYc5-lT_XmX__i6XBv4IRjC3iWhJhA&usqp=CAU"})`}}></div>
+                    <div className="inputcontainers" ><input id="chirp" placeholder="Whats on your mind ?" autocomplete="off" value={chirp} onChange={(e) => setchirp(e.target.value)} /></div>
+                    <div className="inputcontainers" ><input id="loct" placeholder="Add location"  autocomplete="off" value={loct} onChange={(e) => setloct(e.target.value)} /></div>
+                    <div ><FileBase type="file" value={img} multiple={false} onDone={({ base64 }) => setimg(base64)} /> </div>
                 </div>
-                <div><button className="submitbutton" type="submit" onClick={addchirp}>Chirp</button> </div>
+                <div className="submit_button"><Button variant="contained" className="submitbutton" type="submit" onClick={addchirp}>Chirp</Button> </div>
             </form> 
         </div>
         </>

@@ -1,13 +1,12 @@
-import React, { useState } from 'react'
-import { Avatar, Button, IconButton } from '@material-ui/core'
-import MenuIcon from '@material-ui/icons/Menu'
-import AddIcon from '@material-ui/icons/Add';
+import React from 'react'
+import { Avatar, Button } from '@material-ui/core'
 import { auth } from '../../Firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import {Link} from 'react-router-dom'
 import "./Sidemenu.css"
+import { useHistory } from 'react-router';
 
 function Sidemenu() {    
+    const history = useHistory();
     const [user] = useAuthState(auth);
     const signout = () => {
         auth.signOut();
@@ -20,8 +19,8 @@ function Sidemenu() {
                     <span className="user__image" >{user.displayName}</span>
                 </div>
                 <div className="sidemenu__list">
-                <Button variant="contained">Home</Button>
-                <Button variant="contained">Profile</Button>
+                <Button onClick={() => {history.push("./")}} variant="contained">Home</Button>
+                <Button onClick={() => {history.push("./profile")}} variant="contained">Profile</Button>
                 <Button variant="contained">Github</Button>
                 <Button variant="contained">Contact </Button>
             </div>

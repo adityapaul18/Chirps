@@ -156,7 +156,7 @@ span{
     color: rgb(131, 131, 131)  !important;
 }
 
-@media(min-width:800px){
+@media(min-width:400px){
     .header{
         display: none;
     }

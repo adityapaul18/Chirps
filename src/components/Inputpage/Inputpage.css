@@ -14,20 +14,23 @@
 }
 .inputcontainers {
     margin:20px 5px ;
-    border: 1px black solid;
-    border-radius: 10px;
-    padding: 5px;
+    border-bottom: 1px black solid;
+    padding-top: 15px;
+    padding-bottom: 10px;
     width: 75vw;
     max-width: 350px;
 }
 
 .submitbutton{  
-    background-color: rgb(68, 68, 255);
+    background-color: #0166C0 !important;
     padding: 15px;
     border-radius: 20px;
-    color: white;
+    color: white !important;
     font-size: 20px;
     border: none;
+}
+.submit_button{
+    padding-top: 25px;
 }
 input{
     border: 0px solid;
@@ -54,7 +57,15 @@ input::placeholder {
     height: auto;
     cursor: pointer;
     width: 75vw;
-    max-width: 350px;
+    max-width: 300px;
     margin: auto;
     display: flex;
+    height: 200px;
+}
+
+.post_imgcont{
+    height: 250px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
