@@ -7,6 +7,7 @@
     display: flex;
     padding: 15px;
     margin:10px 2px;
+    padding-bottom: 0;
 }
 
 .post_box{
@@ -84,7 +85,8 @@
 .postimg_container{
     width:auto;
     padding: 20px;
+    padding-top: 7px;
 }
 .postimg_container > img {
-   max-width: 100%;
+   width: 100%;
 }

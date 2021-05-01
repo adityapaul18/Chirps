@@ -21,9 +21,9 @@ function Sidemenu() {
                 </div>
                 <div className="sidemenu__list">
                 <Button variant="contained">Home</Button>
-                <Button>Profile</Button>
-                <Button>Github</Button>
-                <Button>Contact </Button>
+                <Button variant="contained">Profile</Button>
+                <Button variant="contained">Github</Button>
+                <Button variant="contained">Contact </Button>
             </div>
             </div>
             
