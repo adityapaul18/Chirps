@@ -34,6 +34,10 @@
     color: black;
     display: flex;
     align-items: center;
+    z-index: -5;
+}
+.chirpoptions > .MuiButton-root{
+    z-index: -1;
 }
 .chirpoptions > .MuiButton-root > span > .MuiSvgIcon-root {
     color: #E22E2E !important;

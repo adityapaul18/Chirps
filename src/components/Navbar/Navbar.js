@@ -17,7 +17,7 @@ function Navbar() {
     const showSidebar = () => setSidebar(!sidebar)
     return (
         <div className="mainhead">
-            <img src={image} alt="nohead"/>
+            <img className="topimghead" src={image} alt="nohead"/>
         <div className="header">
         <nav className = {sidebar ? 'nav-menu active' : 'nav-menu'} >
                 <div className="navbar-toggle">

@@ -1,7 +1,6 @@
 import React from 'react'
 import './Chirp.css'
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
-import ThumbDownAltIcon from '@material-ui/icons/ThumbDownAlt';
 import DeleteIcon from '@material-ui/icons/Delete';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import { Button } from '@material-ui/core/';
@@ -41,8 +40,8 @@ function Chirp({_id, message , timestamp , user , userimage , location , pic }) 
             ) :(
                 <div></div>
             )}
-    </div>
                 <div className="messagedetails" >{message}</div>
+    </div>
                 <div className="chirpoptions" >
                    <Button className="likebtn"> <ThumbUpIcon/>Like</Button>
                     {myuser.photoURL === userimage ? (<><Button  onClick={deletepost} ><DeleteIcon/>Delete</Button></>) : (<></>)}

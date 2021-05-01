@@ -1,6 +1,10 @@
 .mainhead{
     width: 100%;
     display: flex;
+    position: sticky;
+    z-index: 0;
+    top: 0px;
+    background-color: white;
 }
 .mainhead > img {
     margin: auto;
