@@ -12,19 +12,23 @@ function Profilepage() {
 
     const [myuser] = useAuthState(auth);
     const [chirps] = useCollection(db.collection("messages").orderBy("timestamp","desc"))
-
+    const cutdate3 = (str) => {
+        let l = str.length
+        return str.substr(0, l-12) ;
+    };
+    const dd3 = myuser?.metadata.creationTime
     return (
         <>
             <div className="profilecontainer" >
                 <p>  
-                <Avatar src={myuser.photoURL} alt={myuser.displayName}/>
+                <Avatar className="profile_avatar" src={myuser.photoURL} alt={myuser.displayName}/>
                 <div className="profile_header">
                     <div>
                         <p>{myuser.displayName}</p>
                         {myuser.email}
                     </div> 
                     <div>
-                        joined {myuser.metadata.creationTime}                        
+                        joined at {cutdate3(dd3)}                        
                     </div>                     
                 </div>   
                 <div></div>
