@@ -4,7 +4,6 @@ import { auth } from '../../Firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import "./Sidemenu.css"
 import { useHistory } from 'react-router';
-import { Link } from 'react-router-dom';
 
 function Sidemenu() {    
     const history = useHistory();

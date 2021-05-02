@@ -16,6 +16,7 @@ function App() {
       <Router>
         { !user ? ( <Login/> ) : (
             <div>
+                <Navbar/>
             <Switch>
               <Route path="/chirp">
                 <Inputpage />
@@ -24,7 +25,6 @@ function App() {
                 <Profilepage/>
               </Route>
               <Route path="/">
-                <Navbar/>
                 <Homefeed/>
               </Route>
             </Switch>

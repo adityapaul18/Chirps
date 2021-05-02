@@ -4,6 +4,9 @@ import { useCollection } from 'react-firebase-hooks/firestore'
 import { auth, db } from '../../Firebase'
 import './Profilepage.css'
 import Chirp from '../Chirps/Chirp';
+import Sidemenu from '../Sidemenu/Sidemenu'
+import Inputpage from '../Inputpage/Inputpage'
+import { Avatar } from '@material-ui/core'
 
 function Profilepage() {
 
@@ -13,17 +16,26 @@ function Profilepage() {
     return (
         <>
             <div className="profilecontainer" >
-                <div>
-                    <img src={myuser.photoURL} alt={myuser.displayName}/>  <span>{myuser.displayName}</span>
+                <p>  
+                <Avatar src={myuser.photoURL} alt={myuser.displayName}/>
+                <div className="profile_header">
                     <div>
+                        <p>{myuser.displayName}</p>
                         {myuser.email}
                     </div> 
                     <div>
                         joined {myuser.metadata.creationTime}                        
                     </div>                     
                 </div>   
+                <div></div>
+                <div></div>
+                </p>
             </div> 
-            <div>
+            <div className="profile_lower">
+            <div className="profile-left" >
+                    {/* <Sidemenu/> */}
+            </div>
+            <div className="home-mid">
             {chirps?.docs.map((doc) => {
                         const { message , timestamp , user , userpic , location , image } = doc.data();
                         if(userpic === myuser.photoURL){
@@ -42,6 +54,11 @@ function Profilepage() {
                             }
                     })}
             </div>
+            <div className="profile-right" ><div>
+                {/* <Inputpage/> */}
+                </div></div>
+            </div>
+
         </>
     )
 }

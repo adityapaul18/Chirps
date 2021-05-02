@@ -1,4 +1,26 @@
 .profilecontainer{
     display: flex;
     justify-content: space-around;
+    background: url("../../images/web/Banner.png");
+    height: 150px;
+    color: white;
+    width: 100%;
+    margin: auto;
+}
+.profilecontainer > p {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.profile_lower{
+    display: flex;
+    justify-content: space-evenly;
+}
+.profile-right{
+    position: sticky;
+    top: 150px;
+    height: 550px;
+}
+.profile-left{
+
 }
