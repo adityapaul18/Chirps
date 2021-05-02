@@ -8,11 +8,14 @@ import Sidemenu from '../Sidemenu/Sidemenu'
 import Inputpage from '../Inputpage/Inputpage'
 import { Avatar, Button } from '@material-ui/core'
 import { useHistory } from 'react-router'
+import Spinner from 'react-spinkit'
+import Thoughtbox from '../Thougthbox/Thoughtbox'
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 function Profilepage() {
 
     const [myuser] = useAuthState(auth);
-    const [chirps] = useCollection(db.collection("messages").orderBy("timestamp","desc"))
+    const [chirps,loading] = useCollection(db.collection("messages").orderBy("timestamp","desc"))
     const cutdate3 = (str) => {
         let l = str.length
         return str.substr(0, l-12) ;
@@ -27,7 +30,6 @@ function Profilepage() {
         <>
             <div className="profilecontainer" >
                 <p>  
-                <Avatar className="profile_avatar" src={myuser.photoURL} alt={myuser.displayName}/>
                 <div className="profile_header">
                     <div>
                         <p>{myuser.displayName}</p>
@@ -37,27 +39,29 @@ function Profilepage() {
                         joined at {cutdate3(dd3)}                        
                     </div>                     
                 </div>   
-                <div></div>
-                <div></div>
                 </p>
             </div> 
             <div className="profile_lower">
                 
             <div className="profile-left" >        
+                <Avatar className="profile_avatar" src={myuser.photoURL} alt={myuser.displayName}/>
                 <Button onClick={() => {history.push("./")}} variant="contained">Home</Button>
                 <Button onClick={() => {history.push("./profile")}} variant="contained">Profile</Button>
                 <Button variant="contained"><a href="https://github.com/adityapaul18/Chirps">Github</a></Button>
                 <Button variant="contained"><a href="https://adityapaul.herokuapp.com/">Contact</a></Button>
             
-            
+                <div className="logoutbtn">
                 <Button onClick={signout}>logout</Button>
-                    <p>Made By Aditya Paul</p> 
+                    <div>Made By Aditya Paul</div> 
+                </div>
                 
 
             </div>
 
             <div className="home-mid">
-            {chirps?.docs.map((doc) => {
+            {loading ? <div className="loader" ><Spinner name="wandering-cubes" color="#0166C0"/></div> : 
+            <>
+                {chirps?.docs.map((doc) => {
                 const { message , timestamp , user , userpic , location , image } = doc.data();
                 if(userpic === myuser.photoURL){
                     return(
@@ -73,13 +77,13 @@ function Profilepage() {
                         />
                         )
                     }
-                    })}
+                    })}</>}
             </div>
-            <div className="profile-right" ><div>
-                {/* <Inputpage/> */}
-                </div>
+            <div className="profile-right" >
+                <span><ExpandMoreIcon/></span>
+                <Thoughtbox/>
             </div>
-
+            
         </div>
         </>
     )

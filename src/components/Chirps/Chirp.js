@@ -20,7 +20,7 @@ function Chirp({_id, message , timestamp , user , userimage , location , pic }) 
         db.collection("messages").doc(_id).delete();
         console.log("deleted")
     }
-    console.log(timestamp)
+    // console.log(timestamp)
     const dd1 = new Date(timestamp?.toDate()).toUTCString('en-US') ;
     const dd2 = new Date(timestamp?.toDate()).toLocaleTimeString('en-US') 
     return (<>

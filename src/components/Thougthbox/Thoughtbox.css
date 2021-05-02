@@ -1,0 +1,20 @@
+.quotlinne{
+    font-size: 14px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin:35px 10px;
+    margin-top: 0px;
+    width: 100%;
+}
+
+.quoteauth{
+    width: 100%;
+    display: flex;
+    text-align: right;
+    justify-content: right;
+    /* margin-right: 20px; */
+}
+.quoteauth > p {
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
