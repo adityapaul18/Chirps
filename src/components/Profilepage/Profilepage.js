@@ -6,7 +6,8 @@ import './Profilepage.css'
 import Chirp from '../Chirps/Chirp';
 import Sidemenu from '../Sidemenu/Sidemenu'
 import Inputpage from '../Inputpage/Inputpage'
-import { Avatar } from '@material-ui/core'
+import { Avatar, Button } from '@material-ui/core'
+import { useHistory } from 'react-router'
 
 function Profilepage() {
 
@@ -17,6 +18,11 @@ function Profilepage() {
         return str.substr(0, l-12) ;
     };
     const dd3 = myuser?.metadata.creationTime
+
+    const history = useHistory();
+    const signout = () => {
+        auth.signOut();
+    }
     return (
         <>
             <div className="profilecontainer" >
@@ -36,33 +42,45 @@ function Profilepage() {
                 </p>
             </div> 
             <div className="profile_lower">
-            <div className="profile-left" >
-                    {/* <Sidemenu/> */}
+                
+            <div className="profile-left" >        
+                <Button onClick={() => {history.push("./")}} variant="contained">Home</Button>
+                <Button onClick={() => {history.push("./profile")}} variant="contained">Profile</Button>
+                <Button variant="contained"><a href="https://github.com/adityapaul18/Chirps">Github</a></Button>
+                <Button variant="contained"><a href="https://adityapaul.herokuapp.com/">Contact</a></Button>
+            
+            
+                <Button onClick={signout}>logout</Button>
+                    <p>Made By Aditya Paul</p> 
+                
+
             </div>
+
             <div className="home-mid">
             {chirps?.docs.map((doc) => {
-                        const { message , timestamp , user , userpic , location , image } = doc.data();
-                        if(userpic === myuser.photoURL){
-                            return(
-                                <Chirp
-                                _id={doc.id}
-                                key={doc.id}
-                                message={message}
-                                timestamp={timestamp}
-                                user={user}
-                                userimage={userpic}
-                                location={location}
-                                pic={image}
-                                />
-                                )
-                            }
+                const { message , timestamp , user , userpic , location , image } = doc.data();
+                if(userpic === myuser.photoURL){
+                    return(
+                        <Chirp
+                        _id={doc.id}
+                        key={doc.id}
+                        message={message}
+                        timestamp={timestamp}
+                        user={user}
+                        userimage={userpic}
+                        location={location}
+                        pic={image}
+                        />
+                        )
+                    }
                     })}
             </div>
             <div className="profile-right" ><div>
                 {/* <Inputpage/> */}
-                </div></div>
+                </div>
             </div>
 
+        </div>
         </>
     )
 }

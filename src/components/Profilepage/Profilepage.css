@@ -36,5 +36,9 @@
     height: 550px;
 }
 .profile-left{
-
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 400px;
+    margin-top: 80px;
 }
