@@ -7,18 +7,34 @@
     width: 95%;
     border-radius: 15px;
     margin: auto;
+    position: sticky;
+    top: 10px;
+}
+.top_hlogo{
+    background-color: white;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    position: sticky;
+    top: -90px;
+    z-index: 5;
+}
+.top_hlogo > img {
+    height: 100px;
+    padding-right: 80px ;
 }
 .profile_avatar{
     width: 180px !important;
     height: 180px !important;
     margin-top: 50px;
+    margin-bottom: 40px;
 }
 .profilecontainer > p {
     display: flex;
     justify-content: space-around;
     width: 100%;
     height: 100%;
-    align-items: center;
+    align-items: center; 
     padding-top: 0px;
     font-size: 20px;
     line-height: 25px;
@@ -29,7 +45,7 @@
 }
 .profile-right{
     position: sticky;
-    top: 180px;
+    top: 170px;
     height: 450px;
     width: 300px;
     border: 4px solid rgba(128, 128, 128, 0.178);
@@ -66,10 +82,10 @@
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
-    height: 580px;
-    margin-top: -160px;
+    height: 79vh;
+    margin-top: -140px;
     position: sticky;
-    top: 110px;
+    top: 20px;
 }
 .profile-left > .MuiButton-root{
     margin-top: 20px;

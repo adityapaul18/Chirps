@@ -11,6 +11,7 @@ import { useHistory } from 'react-router'
 import Spinner from 'react-spinkit'
 import Thoughtbox from '../Thougthbox/Thoughtbox'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import image from "../../images/head.png"
 
 function Profilepage() {
 
@@ -28,6 +29,9 @@ function Profilepage() {
     }
     return (
         <>
+            <div className="top_hlogo">
+                <img  src={image} alt="nohead"/>
+            </div>
             <div className="profilecontainer" >
                 <p>  
                 <div className="profile_header">
