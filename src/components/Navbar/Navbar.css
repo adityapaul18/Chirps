@@ -181,7 +181,15 @@ span{
     }
 }
 @media(min-width:800px){
+    .mainhead > a > .MuiSvgIcon-root {
+        height: 0px !important;
+    }
+}
+@media(min-width:800px){
     .header{
         display: none;
+    }
+    .mainhead > .MuiAvatar-root{
+        height: 0px !important;
     }
 }

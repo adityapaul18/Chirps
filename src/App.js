@@ -19,7 +19,9 @@ function App() {
                 <Navbar/>
             <Switch>
               <Route path="/chirp">
-                <Inputpage />
+              <div className="inputbox">
+                <div className="home-right" ><Inputpage/></div>
+                </div>
               </Route>
               <Route path="/profile">
                 <Profilepage/>
