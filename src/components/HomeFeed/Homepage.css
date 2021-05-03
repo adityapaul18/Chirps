@@ -32,6 +32,14 @@
     margin: auto;
     align-items: center;
 }
+.inputbox{
+    background-color: rgba(173, 173, 173, 0.205);
+    padding: 15px;
+    border-radius: 15px;
+    height: 550px;
+    position: sticky;
+    top: 120px;
+}
 @media (max-width:1000px){
     .home-mid{
         width: 100%;

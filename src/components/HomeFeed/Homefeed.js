@@ -41,7 +41,7 @@ function Homefeed() {
                     
 
                 </div>
-                <div>
+                <div className="inputbox">
                 <div className="home-right" ><Inputpage/></div>
                 </div>
             </div>

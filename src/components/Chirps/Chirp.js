@@ -43,7 +43,7 @@ function Chirp({_id, message , timestamp , user , userimage , location , pic }) 
                 <div className="messagedetails" >{message}</div>
     </div>
                 <div className="chirpoptions" >
-                   <Button className="likebtn"> <ThumbUpIcon/>Like</Button>
+                    <Button className="likebtn"> <ThumbUpIcon/>Like</Button>
                     {myuser.photoURL === userimage ? (<p onClick={deletepost}><Button ><DeleteIcon/>Delete</Button></p>) : (<></>)}
                 </div>
     </>
