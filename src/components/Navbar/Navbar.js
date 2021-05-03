@@ -26,10 +26,10 @@ function Navbar() {
         </div>
         <div className="header1">
         <nav className = {sidebar ? 'nav-menu active' : 'nav-menu'} >
-                <div className="navbar-toggle">
+                <div className="navbar-toggle" onClick={showSidebar}>
                     < CloseIcon onClick={showSidebar}/>                
                 </div>
-                    <Sidemenu/>
+                    <Sidemenu sidebar={sidebar}  setSidebar={setSidebar}/>
         </nav>
         </div>
 

@@ -5,11 +5,19 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import "./Sidemenu.css"
 import { useHistory } from 'react-router';
 
-function Sidemenu() {    
+function Sidemenu({sidebar , setSidebar}) {    
     const history = useHistory();
     const [user] = useAuthState(auth);
     const signout = () => {
         auth.signOut();
+    }
+    const showSidebar = () => {
+        history.push("./")
+        setSidebar(!sidebar)
+    }
+    const showSidebar2 = () => {
+        history.push("./profile")
+        setSidebar(!sidebar)
     }
     return (
         <div className="sidemenu_main">
@@ -19,8 +27,8 @@ function Sidemenu() {
                     <span className="user__image" >{user.displayName}</span>
                 </div>
                 <div className="sidemenu__list">
-                <Button onClick={() => {history.push("./")}} variant="contained">Home</Button>
-                <Button onClick={() => {history.push("./profile")}} variant="contained">Profile</Button>
+                <Button onClick={showSidebar} variant="contained">Home</Button>
+                <Button onClick={showSidebar2} variant="contained">Profile</Button>
                 <Button variant="contained"><a href="https://github.com/adityapaul18/Chirps">Github</a></Button>
                 <Button variant="contained"><a href="https://adityapaul.herokuapp.com/">Contact</a></Button>
             </div>
