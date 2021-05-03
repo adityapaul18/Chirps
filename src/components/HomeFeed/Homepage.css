@@ -1,6 +1,6 @@
-.homepage{
+/* .homepage{
     
-}
+} */
 .homefeed{
     display: flex;
     justify-content: space-around;
@@ -40,17 +40,39 @@
     position: sticky;
     top: 120px;
 }
+@media (max-width:1300px){
+    .home-right{
+        display: none;
+    }
+    .inputbox{
+        padding: 0;
+    }
+    .home-mid{
+        width: 65%;
+    }
+    .home-left{
+        padding: 0 20px;
+    }
+}
 @media (max-width:1000px){
     .home-mid{
-        width: 100%;
+        width: 60%;
     }
-    .homefeed{
+    /* .homefeed{
         display: inline;
+    } */
+    .home-right{
+        display: none;
     }
+    .home-left{
+        padding: 0 20px;
+    }
+}
+@media (max-width:850px){
     .home-left{
         display: none;
     }
-    .home-right{
-        display: none;
+    .home-mid{
+        width: 95%;
     }
 }

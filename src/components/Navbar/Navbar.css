@@ -156,6 +156,11 @@ span{
     color: rgb(131, 131, 131)  !important;
 }
 
+@media(max-width:1000px){
+    .mainhead > img {
+        padding-right: 0px;
+    }
+}
 @media(min-width:400px){
     .header{
         display: none;

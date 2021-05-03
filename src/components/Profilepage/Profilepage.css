@@ -117,7 +117,6 @@
 
 .prof-mid{
     width: 42%;
-    margin-top: 60px;
 }
 @media (max-width: 1200px){
     .profile-right{
@@ -144,6 +143,7 @@
     }
     .prof-mid{
         width: 82%;
+        margin-top: 60px;
     }
     .profile_lower{
         margin: auto;
