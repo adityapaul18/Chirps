@@ -150,6 +150,7 @@
     }
     .profile_lower{
         margin: auto;
+        margin-top: -30px;
         justify-content: space-around;
     }
     .post_box{
@@ -180,6 +181,7 @@
     }
     .profile_lower{
         margin: auto;
+        margin-top: -60px;
         justify-content: space-around;
     }
     .post_box{
@@ -200,5 +202,13 @@
     .profilecontainer{
         width: 98%;
         height: 110px;
+    }
+    .hidder{
+        height: 60px;
+        background-color: rgb(255, 255, 255);
+        width: 100%;
+        position: sticky;
+        top: 110px;
+        z-index: -1;
     }
 }
