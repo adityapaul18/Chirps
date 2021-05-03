@@ -4,8 +4,6 @@ import { useCollection } from 'react-firebase-hooks/firestore'
 import { auth, db } from '../../Firebase'
 import './Profilepage.css'
 import Chirp from '../Chirps/Chirp';
-import Sidemenu from '../Sidemenu/Sidemenu'
-import Inputpage from '../Inputpage/Inputpage'
 import { Avatar, Button } from '@material-ui/core'
 import { useHistory } from 'react-router'
 import Spinner from 'react-spinkit'
