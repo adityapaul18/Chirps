@@ -18,3 +18,8 @@
     margin-top: 5px;
 }
 
+@media (max-width: 1200px){
+    .quotlinne{
+        font-size: 10px;
+    }
+}

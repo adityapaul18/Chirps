@@ -8,7 +8,8 @@
     border-radius: 15px;
     margin: auto;
     position: sticky;
-    top: 10px;
+    top: 15px;
+    align-items: center;
 }
 .top_hlogo{
     background-color: white;
@@ -16,12 +17,19 @@
     display: flex;
     justify-content: space-around;
     position: sticky;
-    top: -90px;
+    top: -100px;
     z-index: 5;
 }
 .top_hlogo > img {
-    height: 100px;
-    padding-right: 80px ;
+    height: 115px;
+    margin: auto;
+    padding-right: 76px ;
+}
+.profile_avatar2{
+    width: 130px !important;
+    height: 130px !important;
+    margin-top: 90px;
+    display: none !important;
 }
 .profile_avatar{
     width: 180px !important;
@@ -45,7 +53,7 @@
 }
 .profile-right{
     position: sticky;
-    top: 170px;
+    top: 175px;
     height: 470px;
     width: 300px;
     border: 4px solid rgba(128, 128, 128, 0.178);
@@ -82,7 +90,7 @@
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
-    height: 79vh;
+    height: 600px;
     margin-top: -140px;
     position: sticky;
     top: 20px;
@@ -105,4 +113,64 @@
     background-color: white!important;
     color: red !important;
     width: 100%;
+}
+
+.prof-mid{
+    width: 42%;
+    margin-top: 60px;
+}
+@media (max-width: 1200px){
+    .profile-right{
+        width: 220px;
+    }
+}
+@media (max-width: 1000px){
+    .profile-right{
+        display: none;
+    }
+    .prof-mid{
+        width: 62%;
+    }
+    .top_hlogo > img {
+        height: 115px;
+        margin: auto;
+        padding-right: 0px ;
+    }
+    
+}
+@media (max-width: 850px){
+    .profile-left{
+        display: none;
+    }
+    .prof-mid{
+        width: 82%;
+    }
+    .profile_lower{
+        margin: auto;
+        justify-content: space-around;
+    }
+    .post_box{
+        margin: 0;
+    }
+    .profilecontainer > p {
+        width: auto;
+    }
+    .profile_avatar2{
+        display: block !important;
+    }
+}
+@media (max-width: 700px){
+    .profile-left{
+        display: none;
+    }
+    .prof-mid{
+        width: 97%;
+    }
+    .profile_lower{
+        margin: auto;
+        justify-content: space-around;
+    }
+    .post_box{
+        margin: 0;
+    }
 }

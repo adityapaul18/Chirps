@@ -31,6 +31,7 @@ function Profilepage() {
                 <img  src={image} alt="nohead"/>
             </div>
             <div className="profilecontainer" >
+            <Avatar className="profile_avatar2" src={myuser.photoURL} alt={myuser.displayName}/>
                 <p>  
                 <div className="profile_header">
                     <div>
@@ -60,7 +61,7 @@ function Profilepage() {
 
             </div>
 
-            <div className="home-mid">
+            <div className="prof-mid">
             {loading ? <div className="loader" ><Spinner name="wandering-cubes" color="#0166C0"/></div> : 
             <>
                 {chirps?.docs.map((doc) => {
