@@ -2,7 +2,7 @@ import './App.css';
 import Login from './components/Login/Login';
 import Navbar from './components/Navbar/Navbar';
 import React from "react";
-import {  BrowserRouter as Router,Switch,Route,Link} from "react-router-dom";
+import {  BrowserRouter as Router,Switch,Route} from "react-router-dom";
 import { auth } from './Firebase';
 import { useAuthState } from "react-firebase-hooks/auth"
 import Homefeed from './components/HomeFeed/Homefeed.js';
