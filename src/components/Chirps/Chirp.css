@@ -88,5 +88,14 @@
     padding-top: 7px;
 }
 .postimg_container > img {
-   width: 100%;
+    width: 100%;
+}
+
+@media(max-width:800px){
+    .postimg_container{
+        width:auto;
+        padding: 5px;
+        padding-top: 7px;
+    }
+    
 }
