@@ -1,6 +1,6 @@
 .login_container{
-    background-image: url("../../images/web/1.png");
-    background-repeat: no-repeat;
+    background-color: rgba(128, 128, 128, 0.904)(128, 128, 128, 0.247);
+    /* background-repeat: no-repeat; */
     background-size: cover;
     height: 100vh;
     display: grid;
@@ -35,4 +35,18 @@
 .loginbutton > span {
     color: rgb(255, 255, 255) !important;
 
+}
+
+@media(max-width:800px){
+    .login_container{
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+    }
+    .loginbox > div > img {
+        display: flex;
+        width: 80%;
+        margin: auto;
+    }
 }
