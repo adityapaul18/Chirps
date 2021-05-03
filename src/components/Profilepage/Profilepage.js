@@ -10,6 +10,7 @@ import Spinner from 'react-spinkit'
 import Thoughtbox from '../Thougthbox/Thoughtbox'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import image from "../../images/head.png"
+import Navbar from '../Navbar/Navbar'
 
 function Profilepage() {
 
@@ -27,11 +28,8 @@ function Profilepage() {
     }
     return (
         <>
-            <div className="top_hlogo">
-                <img  src={image} alt="nohead"/>
-            </div>
             <div className="profilecontainer" >
-            <Avatar className="profile_avatar2" src={myuser.photoURL} alt={myuser.displayName}/>
+                <Avatar className="profile_avatar2" src={myuser.photoURL} alt={myuser.displayName}/>
                 <p>  
                 <div className="profile_header">
                     <div>
@@ -44,6 +42,7 @@ function Profilepage() {
                 </div>   
                 </p>
             </div> 
+            <div className="hidder">            </div>
             <div className="profile_lower">
                 
             <div className="profile-left" >        

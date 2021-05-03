@@ -1,23 +1,30 @@
 .mainhead{
     width: 100%;
     display: flex;
+    width: 100%;
+    justify-content: space-evenly;
     position: sticky;
     z-index: 0;
     top: 0px;
     background-color: white;
+    align-items: center;
+}
+.mainhead > a > .MuiSvgIcon-root {
+    color: black !important;
+    /* padding-right: 20px; */
 }
 .mainhead > img {
-    margin: auto;
+    /* margin: auto; */
     height: 110px;
     padding-right: 80px;
 }
-.header{
+.header1{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 5px 0;
-    background-color: rgb(68, 68, 255); 
-    color: white;
+    background-color: rgb(255, 255, 255); 
+    /* color: white; */
     width: 100%;
 }
 
@@ -65,7 +72,7 @@ a{
 
 .nav-menu{
     height: 100vh;
-    background-color: #000b4b;
+    background-color: rgb(224, 224, 224);
     width: 300px;
     height: 100vh;
     display: flex;
@@ -79,6 +86,7 @@ a{
     overflow-y: scroll;
     scrollbar-width: none;
     z-index: 5;
+    border-radius: 0px 20px 20px 0px;
 }
 
 .nav-menu::-webkit-scrollbar {
@@ -128,7 +136,6 @@ a{
 }
 
 .navbar-toggle{
-    background-color: #000b4b;
     width: 100%;
     height: 80px;
     display: flex;
@@ -156,12 +163,24 @@ span{
     color: rgb(131, 131, 131)  !important;
 }
 
+.navbar-toggle > .MuiSvgIcon-root {
+    position: absolute;
+    top: 20px;
+    left: 250px;
+}
 @media(max-width:1000px){
     .mainhead > img {
         padding-right: 0px;
     }
 }
-@media(min-width:400px){
+@media(max-width:550px){
+    .mainhead > img {
+        width: 75%;
+        padding-top: 10px;
+        height: auto;
+    }
+}
+@media(min-width:800px){
     .header{
         display: none;
     }
