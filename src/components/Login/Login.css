@@ -1,5 +1,5 @@
 .login_container{
-    background-image: url("../../images/web/3.png");
+    background-image: url("../../images/5.png");
     background-size: cover;
     height: 100vh;
     display: grid;
@@ -9,16 +9,32 @@
 }
 .logo{
     max-width: 500px;
-    margin-left: 100px;
 }
 .loginbox{
     display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
+    justify-content: space-around;
+    /* flex-direction: column; */
     align-items: center;
+    width: 80%;
+    margin: auto;
+}
+.loginbox > div{
+    align-items: center;
+    margin: auto;
 }
 .loginbox > div > h1 {
     font-size: 25px;
+    width: 100%;
+    text-align: center;
+}
+.login_enter > p{
+    padding-bottom: 20px;
+    font-size: 18px;
+}
+.login_enter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .appheader{
     align-items: center;
@@ -28,10 +44,10 @@
     border: none;
     padding: 15px;
     border-radius: 15px;
-    font-size: 18px;
     font-weight: 600;
 }
 .loginbutton > span {
+    font-size: 17px;
     color: rgb(255, 255, 255) !important;
 
 }

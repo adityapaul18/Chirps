@@ -53,7 +53,7 @@ function Profilepage() {
                 <Button variant="contained"><a href="https://adityapaul.herokuapp.com/">Contact</a></Button>
             
                 <div className="logoutbtn">
-                <Button onClick={signout}>logout</Button>
+                <Button cariant="contained" onClick={signout}>logout</Button>
                     <div>Made By Aditya Paul</div> 
                 </div>
                 

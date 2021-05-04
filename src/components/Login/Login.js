@@ -13,12 +13,15 @@ function Login() {
     return (
         <div className="login_container" >
             <div className="loginbox" >
-                <div><img className="logo" src={logo} alt="" /></div>
                 <div>
+                <img className="logo" src={logo} alt="" />
                     <h1 className="appheader" >Chirps-App</h1>
                 </div>
-            </div>  
+            <div className="login_enter">
+                <p>Hop In Here</p>
                 <Button variant="contained" className="loginbutton" onClick={signin} >Login with Google</Button>
+            </div>
+            </div>  
         </div>
     )
 }
