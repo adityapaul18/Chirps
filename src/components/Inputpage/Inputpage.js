@@ -16,6 +16,10 @@ function Inputpage() {
     const addchirp = async (e) => {
         e.preventDefault();
         
+        if(chirp === "" && img === ""){
+            alert("cannot post empty chirp");
+            return;
+        }
         await db.collection("messages").add({
             user: user.displayName ,
             userpic: user.photoURL,
