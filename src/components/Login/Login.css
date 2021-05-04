@@ -1,6 +1,5 @@
 .login_container{
-    background-color: rgba(128, 128, 128, 0.904)(128, 128, 128, 0.247);
-    /* background-repeat: no-repeat; */
+    background-image: url("../../images/web/1_1.png");
     background-size: cover;
     height: 100vh;
     display: grid;
