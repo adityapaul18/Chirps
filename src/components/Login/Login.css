@@ -1,6 +1,7 @@
 .login_container{
     background-image: url("../../images/5.png");
     background-size: cover;
+    background-position: center;
     height: 100vh;
     display: grid;
     justify-content: space-around;
@@ -8,7 +9,7 @@
     display: flex;
 }
 .logo{
-    max-width: 500px;
+    max-width: 550px;
 }
 .loginbox{
     display: flex;
@@ -23,7 +24,7 @@
     margin: auto;
 }
 .loginbox > div > h1 {
-    font-size: 25px;
+    font-size: 28px;
     width: 100%;
     text-align: center;
 }
@@ -39,6 +40,10 @@
 .appheader{
     align-items: center;
 }
+.glogo{
+    height: 20px;
+    margin-right: 10px;
+}
 .loginbutton{
     background-color: #0166C0 !important;
     border: none;
@@ -51,17 +56,31 @@
     color: rgb(255, 255, 255) !important;
 
 }
-
+#logo12{
+    display: none;
+}
 @media(max-width:800px){
     .login_container{
         display: flex;
         justify-content: space-evenly;
         flex-direction: column;
         align-items: center;
+        background-image: url("../../images/5.jpg");
+        background-position: left;
+    }
+    .loginbox{
+        display: flex;
+        flex-direction: column;
     }
     .loginbox > div > img {
         display: flex;
         width: 80%;
         margin: auto;
+    }
+    #logo11{
+        display: none;
+    }
+    #logo12{
+        display: block;
     }
 }
