@@ -2,9 +2,23 @@
   margin: 0;
 }
 .App{
-  
+  background: url("./images/tmp.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  overflow: scroll;
+  height: 100vh;
 }
 .addpage{
   height: 85vh;
   margin: 10px;
+}
+.App::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.App {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }

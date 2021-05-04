@@ -1,5 +1,5 @@
 .login_container{
-    background-image: url("../../images/web/1_1.png");
+    background-image: url("../../images/web/3.png");
     background-size: cover;
     height: 100vh;
     display: grid;
@@ -24,7 +24,7 @@
     align-items: center;
 }
 .loginbutton{
-    background-color: rgb(0, 183, 255) !important;
+    background-color: #0166C0 !important;
     border: none;
     padding: 15px;
     border-radius: 15px;

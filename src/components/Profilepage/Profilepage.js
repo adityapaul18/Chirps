@@ -27,7 +27,7 @@ function Profilepage() {
         auth.signOut();
     }
     return (
-        <>
+        <div className="profile__page">
             <div className="profilecontainer" >
                 <Avatar className="profile_avatar2" src={myuser.photoURL} alt={myuser.displayName}/>
                 <p>  
@@ -87,7 +87,7 @@ function Profilepage() {
             </div>
             
         </div>
-        </>
+        </div>
     )
 }
 

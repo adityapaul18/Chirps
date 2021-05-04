@@ -19,6 +19,7 @@
     top: 150px;
     height: 550px;
     background-color: rgba(173, 173, 173, 0.205);
+    z-index: 1;
 }
 .home-right{
     position: sticky;
