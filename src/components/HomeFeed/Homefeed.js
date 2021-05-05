@@ -10,10 +10,7 @@ import Spinner from 'react-spinkit'
 function Homefeed() {
 
     const [chirps,loading] = useCollection(db.collection("messages").orderBy("timestamp","desc"))
-    useEffect(() => {
-        console.log("hhh")
-        console.log(chirps?.length);
-    },[loading])
+    
 
     return (
         <div className="homepage" >

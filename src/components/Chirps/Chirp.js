@@ -28,7 +28,7 @@ function Chirp({_id, message , timestamp , user , userimage , location , pic ,li
     
         let f = false;
         let checkname = ""
-        likedby?.docs.map((usernm) => {
+        await (likedby?.docs.map((usernm) => {
             const {name ,id } = usernm.data() 
             console.log(name)
             console.log(user)
@@ -38,13 +38,13 @@ function Chirp({_id, message , timestamp , user , userimage , location , pic ,li
                 console.log(checkname)
                 console.log("checked")
             }
-        })
+        }))
         console.log(f)
         if(f===false){
-            await db.collection("messages").doc(_id).update({likes: likes+1});
             await db.collection("messages")?.doc(_id).collection("nlikes").add({
                 name: myuser.email
             });
+            await db.collection("messages").doc(_id).update({likes: likes+1});
             console.log("new user added")
 
         }
@@ -72,7 +72,7 @@ function Chirp({_id, message , timestamp , user , userimage , location , pic ,li
                 <div className="messagedetails" >{message}</div>
     </div>
                 <div className="chirpoptions" >
-                    <Button onClick={() => {likepost(myuser)}} className="likebtn"> <ThumbUpIcon/>{likes.length}{"   "}Like</Button>
+                    <Button onClick={() => {likepost(myuser)}} className="likebtn"> <ThumbUpIcon/>{likes?.length}{"   "}Like</Button>
                     {myuser.photoURL === userimage ? (<p onClick={deletepost}><Button ><DeleteIcon/>Delete</Button></p>) : (<></>)}
                 </div>
     </>

@@ -20,6 +20,7 @@ function Inputpage() {
             alert("cannot post empty chirp");
             return;
         }
+        history.push('/');
         await db.collection("messages").add({
             user: user.displayName ,
             userpic: user.photoURL,
@@ -30,7 +31,6 @@ function Inputpage() {
             mailid: user.email,
             likes:[]
         });
-        history.push('/');
         setchirp("");
         setloct("");
         setimg("");

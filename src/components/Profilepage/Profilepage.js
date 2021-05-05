@@ -64,7 +64,7 @@ function Profilepage() {
             {loading ? <div className="loader" ><Spinner name="wandering-cubes" color="#0166C0"/></div> : 
             <>
                 {chirps?.docs.map((doc) => {
-                const { message , timestamp , user , userpic , location , image } = doc.data();
+                const { message , timestamp , user , userpic , location , image , likes , mailid } = doc.data();
                 if(userpic === myuser.photoURL){
                     return(
                         <Chirp
@@ -76,6 +76,8 @@ function Profilepage() {
                         userimage={userpic}
                         location={location}
                         pic={image}
+                        likes={likes}
+                        email={mailid}
                         />
                         )
                     }
