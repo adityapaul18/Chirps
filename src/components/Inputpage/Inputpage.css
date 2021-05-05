@@ -37,6 +37,11 @@
     font-size: 20px;
     border: none;
 }
+.submit_button > .MuiButton-root {
+    width: 20%;
+    display: flex;
+    margin: auto;
+}
 .submit_button{
     padding-top: 25px;
 }

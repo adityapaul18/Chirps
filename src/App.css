@@ -11,7 +11,7 @@
 }
 .addpage{
   height: 85vh;
-  margin: 10px;
+  margin: 9px;
 }
 .App::-webkit-scrollbar {
   display: none;
