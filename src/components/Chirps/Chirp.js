@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Chirp.css'
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -6,8 +6,9 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 import { Button } from '@material-ui/core/';
 import { auth, db } from '../../Firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useCollection } from 'react-firebase-hooks/firestore';
 
-function Chirp({_id, message , timestamp , user , userimage , location , pic }) {
+function Chirp({_id, message , timestamp , user , userimage , location , pic ,likes }) {
     const [myuser] = useAuthState(auth);
     const cutdate = (str, n) => {
         return str?.length > n ? str.substr(0, n - 1) : str;
@@ -20,7 +21,35 @@ function Chirp({_id, message , timestamp , user , userimage , location , pic }) 
         db.collection("messages").doc(_id).delete();
         console.log("deleted")
     }
-    // console.log(timestamp)
+     const [likedby,loading] = useCollection(db.collection("messages")?.doc(_id).collection("nlikes").orderBy("name","desc"))
+    //  const [checkname, setcheckname] = useState("") 
+
+    const likepost = async (myusern) => {
+    
+        let f = false;
+        let checkname = ""
+        likedby?.docs.map((usernm) => {
+            const {name ,id } = usernm.data() 
+            console.log(name)
+            console.log(user)
+            if(name === myuser.displayName ){
+                f=true;
+                checkname=user
+                console.log(checkname)
+                console.log("checked")
+            }
+        })
+        console.log(f)
+        if(f===false){
+            await db.collection("messages").doc(_id).update({likes: likes+1});
+            await db.collection("messages")?.doc(_id).collection("nlikes").add({
+                name: myuser.displayName
+            });
+            console.log("new user added")
+
+        }
+    }
+    
     const dd1 = new Date(timestamp?.toDate()).toUTCString('en-US') ;
     const dd2 = new Date(timestamp?.toDate()).toLocaleTimeString('en-US') 
     return (<>
@@ -43,7 +72,7 @@ function Chirp({_id, message , timestamp , user , userimage , location , pic }) 
                 <div className="messagedetails" >{message}</div>
     </div>
                 <div className="chirpoptions" >
-                    <Button className="likebtn"> <ThumbUpIcon/>Like</Button>
+                    <Button onClick={() => {likepost(myuser)}} className="likebtn"> <ThumbUpIcon/>{likes.length}{"   "}Like</Button>
                     {myuser.photoURL === userimage ? (<p onClick={deletepost}><Button ><DeleteIcon/>Delete</Button></p>) : (<></>)}
                 </div>
     </>

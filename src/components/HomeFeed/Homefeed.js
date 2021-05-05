@@ -11,8 +11,9 @@ function Homefeed() {
 
     const [chirps,loading] = useCollection(db.collection("messages").orderBy("timestamp","desc"))
     useEffect(() => {
-        console.log(chirps?.docs());
-    },[])
+        console.log("hhh")
+        console.log(chirps?.length);
+    },[loading])
 
     return (
         <div className="homepage" >
@@ -24,7 +25,7 @@ function Homefeed() {
                 </div>
                 <div className="home-mid" >
                     {loading ? <div className="loader" ><Spinner name="wandering-cubes" color="#0166C0"/></div> : <>{chirps?.docs.map((doc) => {
-                        const { message , timestamp , user , userpic , location , image } = doc.data();
+                        const { message , timestamp , user , userpic , location , image ,likes } = doc.data();
                         return(
                             <Chirp
                             _id={doc.id}
@@ -35,6 +36,7 @@ function Homefeed() {
                             userimage={userpic}
                             location={location}
                             pic={image}
+                            likes={likes}
                             />
                         )
                     })}</> }

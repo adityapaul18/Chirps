@@ -1,5 +1,5 @@
 .login_container{
-    background-image: url("../../images/5.png");
+    background-image: url("../../images/5.jpg");
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -67,6 +67,7 @@
         align-items: center;
         background-image: url("../../images/5.jpg");
         background-position: left;
+        background-size: cover;
     }
     .loginbox{
         display: flex;
@@ -82,5 +83,6 @@
     }
     #logo12{
         display: block;
+        padding-bottom :150px ;
     }
 }

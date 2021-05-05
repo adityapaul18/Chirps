@@ -76,7 +76,7 @@
 .profile-right > span {
     width: 95%;
     position: sticky;
-    top: 445px;
+    top: 425px;
     display: flex;
     justify-content: space-around;
 }

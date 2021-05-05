@@ -26,7 +26,8 @@ function Inputpage() {
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
             message: chirp ,
             location : loct,
-            image: img
+            image: img,
+            likes:[]
         });
         history.push('/');
         setchirp("");
