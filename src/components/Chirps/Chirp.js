@@ -32,7 +32,7 @@ function Chirp({_id, message , timestamp , user , userimage , location , pic ,li
             const {name ,id } = usernm.data() 
             console.log(name)
             console.log(user)
-            if(name === myuser.displayName ){
+            if(name === myuser.email ){
                 f=true;
                 checkname=user
                 console.log(checkname)
@@ -43,7 +43,7 @@ function Chirp({_id, message , timestamp , user , userimage , location , pic ,li
         if(f===false){
             await db.collection("messages").doc(_id).update({likes: likes+1});
             await db.collection("messages")?.doc(_id).collection("nlikes").add({
-                name: myuser.displayName
+                name: myuser.email
             });
             console.log("new user added")
 

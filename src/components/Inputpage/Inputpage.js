@@ -27,6 +27,7 @@ function Inputpage() {
             message: chirp ,
             location : loct,
             image: img,
+            mailid: user.email,
             likes:[]
         });
         history.push('/');

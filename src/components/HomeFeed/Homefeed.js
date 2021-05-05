@@ -25,7 +25,7 @@ function Homefeed() {
                 </div>
                 <div className="home-mid" >
                     {loading ? <div className="loader" ><Spinner name="wandering-cubes" color="#0166C0"/></div> : <>{chirps?.docs.map((doc) => {
-                        const { message , timestamp , user , userpic , location , image ,likes } = doc.data();
+                        const { message , timestamp , user , userpic , location , image , likes , mailid } = doc.data();
                         return(
                             <Chirp
                             _id={doc.id}
@@ -37,6 +37,8 @@ function Homefeed() {
                             location={location}
                             pic={image}
                             likes={likes}
+                            email={mailid}
+
                             />
                         )
                     })}</> }
