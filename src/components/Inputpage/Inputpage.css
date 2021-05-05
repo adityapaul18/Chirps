@@ -13,9 +13,11 @@
     align-items: center;
     width: 350px;
 }
-.inputform{
+.inputform > div{
     display: flex;
     flex-direction: column;
+    margin:0 ;
+    width: 97%;
 }
 .MuiFormControl-root {
     margin:15px 2px 0px 2px !important;
@@ -83,5 +85,11 @@ input::placeholder {
 @media(max-width:800px){
     .post_imgcont{
         margin-left: 6px;
+        width: 92%;
+        background-position: center;
+    }
+    .MuiFormControl-root {
+        margin:15px 2px 0px 2px !important;
+        width: 92%;
     }
 }
