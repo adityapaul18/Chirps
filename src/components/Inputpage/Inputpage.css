@@ -7,22 +7,26 @@
 
 .inputform{
     display: flex;
-    /* justify-content: space-evenly; */
+    justify-content: space-evenly;
     flex-direction: column;
-    height: fit-content;
+    height: 100%;
     align-items: center;
+    width: 350px;
 }
-.inputcontainers {
-    margin:20px 5px ;
-    border-bottom: 1px black solid;
-    padding-top: 15px;
-    padding-bottom: 10px;
-    width: 75vw;
+.inputform{
+    display: flex;
+    flex-direction: column;
+}
+.MuiFormControl-root {
+    margin:15px 2px 0px 2px !important;
+    width: 100%;
     max-width: 350px;
     background-color: white;
-    border-radius: 15px;
+    border-radius: 18px;
 }
-
+.MuiOutlinedInput-root{
+    border-radius: 18px !important;
+}
 .submitbutton{  
     background-color: #0166C0 !important;
     padding: 15px;
@@ -55,7 +59,7 @@ input::placeholder {
     height: 3rem;
 } */
 .inputimager{
-    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .select_image{
@@ -70,8 +74,14 @@ input::placeholder {
 
 .post_imgcont{
     height: 250px;
+    max-width: 350px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 15px;
+}
+@media(max-width:800px){
+    .post_imgcont{
+        margin-left: 6px;
+    }
 }

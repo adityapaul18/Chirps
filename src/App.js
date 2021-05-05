@@ -10,7 +10,7 @@ import Inputpage from './components/Inputpage/Inputpage';
 import Profilepage from './components/Profilepage/Profilepage';
 
 function App() {
-  const [user] = useAuthState(auth);
+  const [user,loading] = useAuthState(auth);
   return (
     <div className="App">
       <Router>

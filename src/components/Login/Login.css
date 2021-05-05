@@ -8,6 +8,16 @@
     align-items: center;
     display: flex;
 }
+.loginload_container{
+    background-color: white;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: grid;
+    justify-content: space-around;
+    align-items: center;
+    /* display: flex; */
+}
 .logo{
     max-width: 550px;
 }
