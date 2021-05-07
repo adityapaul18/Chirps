@@ -1,4 +1,6 @@
 ## it's a social media app that I'm making to test up my grip on firebase and react skills
+![image](https://user-images.githubusercontent.com/62583380/117466680-a129c800-af70-11eb-9a2e-bdabbb4b3f5c.png)
+
 
 # Getting Started with Create React App
 
