@@ -3,22 +3,39 @@ import "./Login.css"
 import logo from "../../images/mlogo.png"
 import logo1 from "../../images/wlogo.jpeg"
 import {auth, provider} from '../../Firebase.js';
-import { Button, TextField } from '@material-ui/core';
+import { Avatar, Button, TextField } from '@material-ui/core';
 import logog from "../../images/Google.svg"
 import { useAuthState } from 'react-firebase-hooks/auth';
 import Spinner from 'react-spinkit'
+import FileBase from 'react-file-base64';
 
 function Login() {
     const signin2 = () => {
-        alert("under improvement ,  plz login with google :)")
-
+        auth.signInWithEmailAndPassword(mail,password).then(() => {
+            console.log("under improvement ,  plz login with google :)")
+        })
     }
     const signin = (e) => {
         e.preventDefault();
         auth.signInWithPopup(provider).catch((error) => alert("error signing up"))
     }
+    const signup = async () => {
+        await auth.createUserWithEmailAndPassword(mail,password).then((userAuth) => {
+            userAuth.user
+              .updateProfile({
+                displayName: name,
+            }).catch((err) => {console.log(err)})
+        })
+        console.log(name)
+        console.log(mail)
+        console.log(profilepic)
+        console.log(password)
+    }
+    const [newuser, setnewuser] = useState(0)
     const [user,loading] = useAuthState(auth);
     const [mail, setmail] = useState("")
+    const [name, setname] = useState("")
+    const [profilepic, setprofilepic] = useState("")
     const [password, setpassword] = useState("")
     if(loading){
         return(
@@ -44,13 +61,27 @@ function Login() {
                 <img className="logo" id="logo12" src={logo} alt="" />
                 <img className="logo" id="logo11" src={logo1} alt="" />
                 </div>
-            <div className="login_enter">
-                <p>Hop In Here</p>
-                <TextField variant="outlined" label="Email" value={mail} onChange={(e) => setmail(e.target.value)}/>
-                <TextField variant="outlined" label="Password" value={password} onChange={(e) => setpassword(e.target.value)} type="password"/>          
-                <Button variant="contained" className="loginbutton2" onClick={signin2} >Sign in</Button>
-                <Button variant="contained" className="loginbutton" onClick={signin} ><img className="glogo" src={logog} alt=""/>Login with Google</Button>
-            </div>
+                <div className="login_enter">
+                    {!newuser ? 
+                    <>
+                        <p>Hop In Here</p>
+                        <TextField variant="outlined" label="Email" value={mail} onChange={(e) => setmail(e.target.value)}/>
+                        <TextField variant="outlined" label="Password" value={password} onChange={(e) => setpassword(e.target.value)} type="password"/>          
+                        <Button variant="contained" className="loginbutton2" onClick={signin2} >Sign in</Button>
+                        <Button variant="contained" className="loginbutton" onClick={signin} ><img className="glogo" src={logog} alt=""/>Login with Google</Button>
+                    </> 
+                    : 
+                    <>
+                        <p>Lets get you registered</p>
+                        <Avatar src={profilepic}/>
+                        <TextField variant="outlined" label="Name" value={name} onChange={(e) => setname(e.target.value)}/>
+                        <TextField variant="outlined" label="Email" value={mail} onChange={(e) => setmail(e.target.value)}/>
+                        <TextField variant="outlined" label="Password" value={password} onChange={(e) => setpassword(e.target.value)} type="password"/>  
+                        <FileBase type="file" value={profilepic} multiple={false} onDone={({ base64 }) => setprofilepic(base64)} /><span>{"<"} 1 mb</span>        
+                        <Button variant="contained" className="loginbutton2" onClick={signup} >Sign Up</Button>
+                    </>}
+                    
+                </div>
             </div>  
         </div>
     )
