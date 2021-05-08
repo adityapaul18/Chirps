@@ -62,24 +62,25 @@ function Login() {
                 <img className="logo" id="logo11" src={logo1} alt="" />
                 </div>
                 <div className="login_enter">
-                    {!newuser ? 
+                    {newuser ? 
                     <>
                         <p>Hop In Here</p>
                         <TextField variant="outlined" label="Email" value={mail} onChange={(e) => setmail(e.target.value)}/>
                         <TextField variant="outlined" label="Password" value={password} onChange={(e) => setpassword(e.target.value)} type="password"/>          
                         <Button variant="contained" className="loginbutton2" onClick={signin2} >Sign in</Button>
                         <Button variant="contained" className="loginbutton" onClick={signin} ><img className="glogo" src={logog} alt=""/>Login with Google</Button>
-                        <span className="switch">new user ? <span onClick={() => {setnewuser(1)}}>Signup</span> </span>
+                        <span className="switch">new user ? <span onClick={() => {setnewuser(0)}}>Signup</span> </span>
                     </> 
                     : 
                     <>
                         <p>Lets get you registered</p>
-                        <Avatar className="signup_image">{name.charAt(0).toLocaleUpperCase()}</Avatar>
+                        <Avatar className="signup_image">{name.charAt(0).toLocaleUpperCase() || "P"}</Avatar>
                         <TextField variant="outlined" label="Name" value={name} onChange={(e) => setname(e.target.value)}/>
                         <TextField variant="outlined" label="Email" value={mail} onChange={(e) => setmail(e.target.value)}/>
                         <TextField variant="outlined" label="Password" value={password} onChange={(e) => setpassword(e.target.value)} type="password"/>  
                         <Button variant="contained" className="loginbutton2" onClick={signup} >Sign Up</Button>
-                        <span className="switch">Have an account ? <span onClick={() => {setnewuser(0)}}>Signin</span> </span>
+                        <Button variant="contained" className="loginbutton" onClick={signin} ><img className="glogo" src={logog} alt=""/>Login with Google</Button>
+                        <span className="switch">Have an account ? <span onClick={() => {setnewuser(1)}}>Signin</span> </span>
                     </>}
                     
                 </div>

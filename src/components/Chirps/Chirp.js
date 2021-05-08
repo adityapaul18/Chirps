@@ -56,7 +56,7 @@ function Chirp({_id, message , timestamp , user , userimage , location , pic ,li
     
     <div className="post_box">
         <div className="chirp_box">
-            <div><Avatar className="userimage" src={userimage} alt="sdfsdf" >{myuser?.displayName.charAt(0).toLocaleUpperCase()}</Avatar></div>
+            <div><Avatar className="userimage" src={userimage} alt="sdfsdf" >{user.charAt(0).toLocaleUpperCase()}</Avatar></div>
             <div className="chirpbox_details">
                 <div className="userdetails" ><b>{user}</b> <p className="timedetatils">{cutdate(dd1,17)} {cutdate2(dd2)}  </p></div>
                 {location ? (<div className="loctdetails" > <LocationOnIcon/> {location}</div>) : (<div className="noloctdetails" > </div>) }
