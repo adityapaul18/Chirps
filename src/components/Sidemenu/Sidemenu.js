@@ -10,7 +10,7 @@ function Sidemenu({sidebar , setSidebar}) {
     const [user] = useAuthState(auth);
     const signout = () => {
         auth.signOut();
-    }
+    } 
     const showSidebar = () => {
         history.push("./")
         setSidebar(!sidebar)

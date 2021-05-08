@@ -60,14 +60,33 @@
     padding: 15px;
     border-radius: 15px;
     font-weight: 600;
+    margin-top: 30px !important;
 }
 .loginbutton > span {
     font-size: 17px;
     color: rgb(255, 255, 255) !important;
 
 }
+.loginbutton2{
+    background-color: #00cf1c !important;
+    border: none;
+    padding: 15px;
+    border-radius: 15px;
+    font-weight: 600;
+    margin-top: 30px !important;
+}
+.loginbutton2 > span {
+    font-size: 17px;
+    color: rgb(255, 255, 255) !important;
+
+}
 #logo12{
     display: none;
+}
+.manentry{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
 }
 @media(max-width:800px){
     .login_container{
