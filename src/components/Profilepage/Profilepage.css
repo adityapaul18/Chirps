@@ -39,12 +39,16 @@
     margin-top: 90px;
     display: none !important;
     z-index: 1;
+    background-color: #0166C0 !important;
+
 }
 .profile_avatar{
     width: 180px !important;
     height: 180px !important;
     margin-top: 50px;
     margin-bottom: 40px;
+    background-color: #0166C0 !important;
+    font-size: 20px !important;
 }
 .profilecontainer > p {
     display: flex;

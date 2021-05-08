@@ -45,7 +45,7 @@ function Profilepage() {
             <div className="profile_lower">
                 
             <div className="profile-left" >        
-                <Avatar className="profile_avatar" src={myuser.photoURL} alt={myuser.displayName}/>
+                <Avatar className="profile_avatar" src={myuser.photoURL} alt={myuser.displayName}>{myuser?.displayName.charAt(0).toLocaleUpperCase()}</Avatar>
                 <Button onClick={() => {history.push("./")}} variant="contained">Home</Button>
                 <Button onClick={() => {history.push("./profile")}} variant="contained">Profile</Button>
                 <Button variant="contained"><a href="https://github.com/adityapaul18/Chirps">Github</a></Button>

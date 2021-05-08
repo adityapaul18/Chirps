@@ -88,6 +88,19 @@
     flex-direction: column;
     margin: auto;
 }
+.switch{
+    margin-top: 20px;
+}
+.switch > span {
+    color: #0166C0;
+    cursor: pointer;
+}
+.signup_image{
+    width: 70px !important;
+    height: 70px !important;
+    background-color: #f5003d !important;
+
+}
 @media(max-width:800px){
     .login_container{
         display: flex;
