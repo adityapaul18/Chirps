@@ -3,7 +3,7 @@ import './Chirp.css'
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import DeleteIcon from '@material-ui/icons/Delete';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
-import { Button } from '@material-ui/core/';
+import { Avatar, Button } from '@material-ui/core/';
 import { auth, db } from '../../Firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollection } from 'react-firebase-hooks/firestore';
@@ -56,7 +56,7 @@ function Chirp({_id, message , timestamp , user , userimage , location , pic ,li
     
     <div className="post_box">
         <div className="chirp_box">
-            <div><img className="userimage" src={userimage} alt="sdfsdf" /></div>
+            <div><Avatar className="userimage" src={userimage} alt="sdfsdf" >{myuser?.displayName.charAt(0).toLocaleUpperCase()}</Avatar></div>
             <div className="chirpbox_details">
                 <div className="userdetails" ><b>{user}</b> <p className="timedetatils">{cutdate(dd1,17)} {cutdate2(dd2)}  </p></div>
                 {location ? (<div className="loctdetails" > <LocationOnIcon/> {location}</div>) : (<div className="noloctdetails" > </div>) }

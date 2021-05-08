@@ -22,7 +22,7 @@ function Sidemenu({sidebar , setSidebar}) {
     return (
         <div className="sidemenu_main">
            <div className="sidemenu_top">
-                    <Avatar className="sidemenu_avatar" src={user.photoURL} >{user?.displayName.charAt(0)}</Avatar>                    
+                    <Avatar className="sidemenu_avatar" src={user.photoURL} >{user?.displayName.charAt(0).toLocaleUpperCase()}</Avatar>                    
                 <div>
                     <span className="user__image" >{user.displayName}</span>
                 </div>
