@@ -7,8 +7,9 @@ import { Avatar, Button } from '@material-ui/core/';
 import { auth, db } from '../../Firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollection } from 'react-firebase-hooks/firestore';
+import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
 
-function Chirp({_id, message , timestamp , user , userimage , location , pic ,likes }) {
+function Chirp({_id, message , timestamp , user , userimage , location , pic ,likes, email }) {
     const [myuser] = useAuthState(auth);
     const cutdate = (str, n) => {
         return str?.length > n ? str.substr(0, n - 1) : str;
@@ -73,7 +74,8 @@ function Chirp({_id, message , timestamp , user , userimage , location , pic ,li
     </div>
                 <div className="chirpoptions" >
                     <Button onClick={() => {likepost(myuser)}} className="likebtn"> <ThumbUpIcon/>{likes?.length}{"   "}Like</Button>
-                    {myuser.photoURL === userimage ? (<p onClick={deletepost}><Button ><DeleteIcon/>Delete</Button></p>) : (<></>)}
+                    <Button onClick={() => {}} className="likebtn"> <ChatBubbleOutlineIcon/>{"   "}comment</Button>
+                    {myuser.email === email ? (<p onClick={deletepost}><Button ><DeleteIcon/></Button></p>) : (<></>)}
                 </div>
     </>
     )

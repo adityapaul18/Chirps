@@ -64,7 +64,7 @@ function Profilepage() {
             <>
                 {chirps?.docs.map((doc) => {
                 const { message , timestamp , user , userpic , location , image , likes , mailid } = doc.data();
-                if(userpic === myuser.photoURL){
+                if(mailid === myuser.email){
                     return(
                         <Chirp
                         _id={doc.id}
