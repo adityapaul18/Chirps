@@ -1,0 +1,48 @@
+.comment_box{
+    display: flex;
+    height: 100%;
+}
+.modalimage{
+    height: 100%;
+}
+.mimage_contain{
+    display: flex;
+    flex: 0.5;
+    flex-direction: row;
+    background: url("https://i.pinimg.com/originals/4a/3c/8c/4a3c8c74375e8fbe5adf99db215ca0e2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.modal_comments{
+    display: flex;
+    flex: 0.5;
+    flex-direction: column;
+}
+.mimage_contain > div {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.493);
+}
+.comment_window{
+    position: absolute;
+    bottom: 20px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.comment_box{
+    height: 100%;
+    overflow: scroll;
+}
+.comments{
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    margin: 15px auto;
+}
+.comment_window > .MuiInput-root{
+    width: 90% !important;
+    margin: auto;
+    padding: 10px;
+    background-color: red;
+}
