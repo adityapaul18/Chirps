@@ -8,6 +8,7 @@ import { useAuthState } from "react-firebase-hooks/auth"
 import Homefeed from './components/HomeFeed/Homefeed.js';
 import Inputpage from './components/Inputpage/Inputpage';
 import Profilepage from './components/Profilepage/Profilepage';
+import Test from './components/test/Test';
 
 function App() {
   const [user,loading] = useAuthState(auth);
@@ -27,6 +28,9 @@ function App() {
               </Route>
               <Route path="/profile">
                 <Profilepage/>
+              </Route>
+              <Route path="/test">
+                <Test/>
               </Route>
               <Route path="/">
                 <Homefeed/>

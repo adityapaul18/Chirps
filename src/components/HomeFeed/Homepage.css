@@ -12,6 +12,9 @@
 .home-mid{
     width: 40%;
 }
+.modalbox{
+    z-index: 5;
+}
 .home-left{
     padding: 0 50px;
     border-radius: 20px;
