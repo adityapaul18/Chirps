@@ -18,31 +18,55 @@
     flex: 0.5;
     flex-direction: column;
 }
+.modal_comments_cont {
+    height: 90%;
+    overflow-y: scroll;
+}
+.modal_comments_cont::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .modal_comments_cont {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
 .mimage_contain > div {
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.493);
 }
 .comment_window{
-    position: absolute;
-    bottom: 20px;
+    position: fixed;
+    bottom: 60px;
+    right: 30px;
     width: 50%;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
+}
+.add_combtn{
+    position: fixed;
+    bottom: 50px;
+    right: 70px;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+}
+.add_combtn > .MuiIconButton-root  {
+    color: #0166C0 !important;
 }
 .comment_box{
-    height: 100%;
-    overflow: scroll;
+    /* height: fit-content; */
+    /* overflow: scroll; */
 }
 .comments{
     width: 95%;
     display: flex;
     flex-direction: column;
-    margin: 15px auto;
+    margin: 25px auto;
 }
 .comment_window > .MuiInput-root{
     width: 90% !important;
     margin: auto;
     padding: 10px;
-    background-color: red;
+    background-color: rgb(255, 255, 255);
 }

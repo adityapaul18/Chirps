@@ -29,7 +29,6 @@ function Homefeed() {
             <div className="homefeed">
             {/* <ReactModal className="modalbox" isOpen={modalIsOpen}  ><div>
                 ksjnbsbvsbdvbskd</div></ReactModal> */}
-                <Test/>
 
                 <div className="left_container">
                 <div className="home-left" >

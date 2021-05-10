@@ -44,6 +44,9 @@
     position: sticky;
     top: 120px;
 }
+.commentmodal{
+    z-index: 3;
+}
 @media (max-width:1300px){
     .home-right{
         display: none;
