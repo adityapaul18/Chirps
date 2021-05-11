@@ -7,11 +7,13 @@
 }
 .mimage_contain{
     display: flex;
-    flex: 0.5;
+    flex: 0.47;
     flex-direction: row;
     /* background: url("https://i.pinimg.com/originals/4a/3c/8c/4a3c8c74375e8fbe5adf99db215ca0e2.jpg"); */
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
+    border-radius: 15px;
 }
 .modal_comments{
     display: flex;
@@ -24,17 +26,18 @@
 }
 .modal_comments_cont::-webkit-scrollbar {
     display: none;
-  }
-  
-  /* Hide scrollbar for IE, Edge and Firefox */
-  .modal_comments_cont {
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.modal_comments_cont {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
-  }
+}
 .mimage_contain > div {
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.493);
+    border-radius: 15px;
 }
 .comment_window{
     position: fixed;
@@ -47,7 +50,7 @@
 .add_combtn{
     position: fixed;
     bottom: 50px;
-    right: 70px;
+    right: 45px;
     cursor: pointer;
     background-color: rgb(255, 255, 255);
 }
@@ -75,4 +78,33 @@
     top: 15px;
     right: 15px; 
     cursor: pointer;
+}
+@media (max-width:850px){
+    .comment_box{
+        flex-direction: column;
+    }
+    .comment_window{
+        width: 90%;
+    }
+    .mimage_contain{
+        margin-top: 20px;
+    }
+    .closer{
+        position: absolute;
+        top: 10px;
+        right: 5px; 
+        cursor: pointer;
+    }
+    .ReactModal__Overlay{
+        inset: -35px !important;
+    }
+    .add_combtn{
+        position: fixed;
+        bottom: 20px;
+        right: 8px;
+    }
+    .comment_window{
+        position: fixed;
+        bottom: 20px;
+    }
 }

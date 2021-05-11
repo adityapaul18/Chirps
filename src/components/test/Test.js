@@ -7,12 +7,13 @@ import { useCollection } from 'react-firebase-hooks/firestore';
 import { auth, db } from '../../Firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import HighlightOffIcon from '@material-ui/icons/HighlightOff';
+import firebase from 'firebase'
 
 function Test({chirpid,mode,setchirpid,setIsOpen}) {
     const [user] = useAuthState(auth);
     setchirpid(chirpid)
     const [reqdoc,loading] = useCollection(db.collection("messages").doc(chirpid))
-    const [reqcom,loadig] = useCollection(db.collection("messages").doc(chirpid).collection("comments"))
+    const [reqcom,loadig] = useCollection(db.collection("messages").doc(chirpid).collection("comments").orderBy("timestamp","asc"))
 
     const [comment,setcomment] = useState("");
     const customStyles = {
@@ -21,10 +22,15 @@ function Test({chirpid,mode,setchirpid,setIsOpen}) {
         }
       };
     const addcomment = () => {
+        if(!comment){
+            alert("plz add a comment")
+            return;
+        }
         db.collection("messages").doc(chirpid).collection("comments").add({
             name: user.displayName,
             comment: comment,
-            mail: user.email
+            mail: user.email,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         })
         setcomment("")
     }
@@ -58,7 +64,7 @@ function Test({chirpid,mode,setchirpid,setIsOpen}) {
 
                    </div>
                    <div className="comment_window">
-                       <Input className="comment window" placeholder="Add a caption" value={comment} onChange={(e) => setcomment(e.target.value)}/>
+                       <Input className="comment window" placeholder="Add comment" value={comment} onChange={(e) => setcomment(e.target.value)}/>
                        <span onClick={addcomment} className="add_combtn"><IconButton><SendIcon/></IconButton></span>
                    </div>
                 </div>
