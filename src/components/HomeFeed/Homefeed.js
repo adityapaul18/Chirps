@@ -46,7 +46,7 @@ function Homefeed() {
                     {loading ? <div className="loader" ><Spinner name="wandering-cubes" color="#0166C0"/></div> : 
                     <>
                         {chirps?.docs.map((doc) => {
-                        const { message , timestamp , user , userpic , location , image , likes , mailid } = doc.data();
+                        const { message , timestamp , user , userpic , location , image , likes , mailid , comments} = doc.data();
                         return(
                             <div>
                                 <Chirp
@@ -63,6 +63,7 @@ function Homefeed() {
                                     mode={modalIsOpen}
                                     setIsOpen={setIsOpen}
                                     setchirpid={setchirpid}
+                                    comments={comments}
                                 />
                             </div>
                         )

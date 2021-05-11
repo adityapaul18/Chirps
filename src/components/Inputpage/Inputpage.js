@@ -29,7 +29,8 @@ function Inputpage() {
             location : loct,
             image: img,
             mailid: user.email,
-            likes:[]
+            likes:[],
+            comments:[]
         });
         setchirp("");
         setloct("");

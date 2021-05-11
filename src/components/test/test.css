@@ -7,7 +7,7 @@
 }
 .mimage_contain{
     display: flex;
-    flex: 0.47;
+    flex: 0.49;
     flex-direction: row;
     /* background: url("https://i.pinimg.com/originals/4a/3c/8c/4a3c8c74375e8fbe5adf99db215ca0e2.jpg"); */
     background-repeat: no-repeat;
@@ -78,6 +78,20 @@
     top: 15px;
     right: 15px; 
     cursor: pointer;
+}
+.commentname{
+    margin-left: 10px;
+    font-size: 15px;
+    font-weight: 700;
+}
+.commentname > span{
+    font-size: 10px;
+    font-weight: 400;
+
+}
+.commentval{
+    margin-left: 10px;
+    font-size: 18px;
 }
 @media (max-width:850px){
     .comment_box{

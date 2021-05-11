@@ -14,26 +14,36 @@ function Test({chirpid,mode,setchirpid,setIsOpen}) {
     setchirpid(chirpid)
     const [reqdoc,loading] = useCollection(db.collection("messages").doc(chirpid))
     const [reqcom,loadig] = useCollection(db.collection("messages").doc(chirpid).collection("comments").orderBy("timestamp","asc"))
-
+    
+    
     const [comment,setcomment] = useState("");
     const customStyles = {
         content : {
-          marginTop          : '90px',
+            marginTop          : '70px',
         }
-      };
-    const addcomment = () => {
+    };
+    const addcomment = async () => {
         if(!comment){
             alert("plz add a comment")
             return;
         }
-        db.collection("messages").doc(chirpid).collection("comments").add({
+        await db.collection("messages").doc(chirpid).collection("comments").add({
             name: user.displayName,
             comment: comment,
             mail: user.email,
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         })
+        await db.collection("messages").doc(chirpid).update({comments:reqdoc.docs().comment+1});
+        //  console.log(doccom)
         setcomment("")
     }
+    const cutdate = (str, n) => {
+        return str?.length > n ? str.substr(5, n - 5) : str;
+    };
+    const cutdate2 = (str) => {
+        let l = str.length
+        return str.substr(0, l-6) + str.substr(l-3,l);
+    };
     const img = (reqdoc?.data().image || user?.photoURL)
     const pic = user?.photoURL
     return (
@@ -48,12 +58,14 @@ function Test({chirpid,mode,setchirpid,setIsOpen}) {
                 <div className="modal_comments">
                    <div className="modal_comments_cont">
                        {reqcom?.docs.map((coment) => {
-                           const {name , comment , mail} = coment?.data()
+                           const {name , comment , timestamp} = coment?.data()
+                           const dd4 = new Date(timestamp?.toDate()).toUTCString('en-US') ;
+                           const dd3 = new Date(timestamp?.toDate()).toLocaleTimeString('en-US') 
                            return(
                                <div className="comments">
                            <div>
-                               <p>{name}</p>
-                               <p>{comment}</p> 
+                               <p className="commentname">{name}<span>{" "}@{cutdate2(dd3)} {cutdate(dd4,17)} </span></p>
+                               <p className="commentval">{comment}</p> 
                            </div>
                        </div>
                                )
