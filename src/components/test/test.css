@@ -9,7 +9,7 @@
     display: flex;
     flex: 0.5;
     flex-direction: row;
-    background: url("https://i.pinimg.com/originals/4a/3c/8c/4a3c8c74375e8fbe5adf99db215ca0e2.jpg");
+    /* background: url("https://i.pinimg.com/originals/4a/3c/8c/4a3c8c74375e8fbe5adf99db215ca0e2.jpg"); */
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -69,4 +69,10 @@
     margin: auto;
     padding: 10px;
     background-color: rgb(255, 255, 255);
+}
+.closer{
+    position: absolute;
+    top: 15px;
+    right: 15px; 
+    cursor: pointer;
 }

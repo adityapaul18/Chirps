@@ -3,9 +3,17 @@ import React, { useState } from 'react'
 import ReactModal from 'react-modal';
 import './test.css'
 import SendIcon from '@material-ui/icons/Send';
+import { useCollection } from 'react-firebase-hooks/firestore';
+import { auth, db } from '../../Firebase';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 
-function Test() {
-    const [modalIsOpen,setIsOpen] = useState(true);
+function Test({chirpid,mode,setchirpid,setIsOpen}) {
+    const [user] = useAuthState(auth);
+    setchirpid(chirpid)
+    const [reqdoc,loading] = useCollection(db.collection("messages").doc(chirpid))
+    const [reqcom,loadig] = useCollection(db.collection("messages").doc(chirpid).collection("comments"))
+
     const [comment,setcomment] = useState("");
     const customStyles = {
         content : {
@@ -13,65 +21,40 @@ function Test() {
         }
       };
     const addcomment = () => {
-        console.log("added")
+        db.collection("messages").doc(chirpid).collection("comments").add({
+            name: user.displayName,
+            comment: comment,
+            mail: user.email
+        })
+        setcomment("")
     }
+    const img = (reqdoc?.data().image || user?.photoURL)
+    const pic = user?.photoURL
     return (
         <div>
-            <ReactModal style={customStyles} isOpen={modalIsOpen}>
+            <ReactModal style={customStyles} isOpen={mode}>
             <div className="comment_box">
-                <div className="mimage_contain">
+                <HighlightOffIcon className="closer" onClick={() => {setIsOpen(!mode)}} />
+                <div className="mimage_contain" style={{backgroundImage: `url(${img || pic })`}}>
                     <div></div>
                     {/* <img className="modalimage" src="https://images-na.ssl-images-amazon.com/images/I/812phqzj4AL._AC_SX679_.jpg" alt=""/> */}
                 </div>
                 <div className="modal_comments">
                    <div className="modal_comments_cont">
-                   <div className="comments">
-                        <div>
-                            <p>aditya paul</p>
-                            <p>lorem qfasf asfasfa fa sfasfasfa sfas sbdsgsd gsdg sdgs dgsdgsd g s dg lorem qfasf asfasfa fa sfasfasfa sfas sbdsgsd gsdg sdgs dgsdgsd g s dg </p>
-                        </div>
-                    </div>
-                    <div className="comments">
-                        <div>
-                            <p>aditya paul</p>
-                            <p>lorem qfasf asfasfa fa sfasfasfa sfas sbdsgsd gsdg sdgs dgsdgsd g s dg lorem qfasf asfasfa fa sfasfasfa sfas sbdsgsd gsdg sdgs dgsdgsd g s dg </p>
-                        </div>
-                    </div>
-                    <div className="comments">
-                        <div>
-                            <p>aditya paul</p>
-                            <p>lorem qfasf asfasfa fa sfasfasfa sfas sbdsgsd gsdg sdgs dgsdgsd g s dg lorem qfasf asfasfa fa sfasfasfa sfas sbdsgsd gsdg sdgs dgsdgsd g s dg </p>
-                        </div>
-                    </div>
-                    <div className="comments">
-                        <div>
-                            <p>aditya paul</p>
-                            <p>lorem qfasf asfasfa fa sfasfasfa sfas sbdsgsd gsdg sdgs dgsdgsd g s dg lorem qfasf asfasfa fa sfasfasfa sfas sbdsgsd gsdg sdgs dgsdgsd g s dg </p>
-                        </div>
-                    </div>
-                    <div className="comments">
-                        <div>
-                            <p>aditya paul</p>
-                            <p>lorem qfasf asfasfa fa sfasfasfa sfas sbdsgsd gsdg sdgs dgsdgsd g s dg lorem qfasf asfasfa fa sfasfasfa sfas sbdsgsd gsdg sdgs dgsdgsd g s dg </p>
-                        </div>
-                    </div>
-                    <div className="comments">
-                        <div>
-                            <p>aditya paul</p>
-                            <p>lorem qfasf asfasfa fa sfasfasfa sfas sbdsgsd gsdg sdgs dgsdgsd g s dg lorem qfasf asfasfa fa sfasfasfa sfas sbdsgsd gsdg sdgs dgsdgsd g s dg </p>
-                        </div>
-                    </div>
-                    <div className="comments">
-                        <div>
-                            <p>aditya paul</p>
-                            <p>lorem qfasf asfasfa fa sfasfasfa sfas sbdsgsd gsdg sdgs dgsdgsd g s dg lorem qfasf asfasfa fa sfasfasfa sfas sbdsgsd gsdg sdgs dgsdgsd g s dg </p>
-                        </div>
-                    </div><div className="comments">
-                        <div>
-                            <p>aditya paul</p>
-                            <p>lorem qfasf asfasfa fa sfasfasfa sfas sbdsgsd gsdg sdgs dgsdgsd g s dg lorem qfasf asfasfa fa sfasfasfa sfas sbdsgsd gsdg sdgs dgsdgsd g s dg </p>
-                        </div>
-                    </div> 
+                       {reqcom?.docs.map((coment) => {
+                           const {name , comment , mail} = coment?.data()
+                           return(
+                               <div className="comments">
+                           <div>
+                               <p>{name}</p>
+                               <p>{comment}</p> 
+                           </div>
+                       </div>
+                               )
+                       })
+
+                       }
+                  
 
                    </div>
                    <div className="comment_window">
