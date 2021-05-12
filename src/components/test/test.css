@@ -93,6 +93,9 @@
     margin-left: 10px;
     font-size: 18px;
 }
+.commentdiv{
+    display: flex;
+}
 @media (max-width:850px){
     .comment_box{
         flex-direction: column;

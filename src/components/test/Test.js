@@ -1,4 +1,4 @@
-import { IconButton, Input, TextField } from '@material-ui/core';
+import { Avatar, IconButton, Input, TextField } from '@material-ui/core';
 import React, { useState } from 'react'
 import ReactModal from 'react-modal';
 import './test.css'
@@ -30,10 +30,11 @@ function Test({chirpid,mode,setchirpid,setIsOpen}) {
         await db.collection("messages").doc(chirpid).collection("comments").add({
             name: user.displayName,
             comment: comment,
+            photo:user.photoURL,
             mail: user.email,
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         })
-        await db.collection("messages").doc(chirpid).update({comments:reqdoc.docs().comment+1});
+        // await db.collection("messages").doc(chirpid).update({comments:reqdoc.docs().comment+1});
         //  console.log(doccom)
         setcomment("")
     }
@@ -58,14 +59,17 @@ function Test({chirpid,mode,setchirpid,setIsOpen}) {
                 <div className="modal_comments">
                    <div className="modal_comments_cont">
                        {reqcom?.docs.map((coment) => {
-                           const {name , comment , timestamp} = coment?.data()
+                           const {name , comment , timestamp , photo} = coment?.data()
                            const dd4 = new Date(timestamp?.toDate()).toUTCString('en-US') ;
                            const dd3 = new Date(timestamp?.toDate()).toLocaleTimeString('en-US') 
                            return(
                                <div className="comments">
-                           <div>
-                               <p className="commentname">{name}<span>{" "}@{cutdate2(dd3)} {cutdate(dd4,17)} </span></p>
-                               <p className="commentval">{comment}</p> 
+                           <div className="commentdiv" >
+                               <div><Avatar src={photo} >{ name?.charAt(0).toLocaleUpperCase()}</Avatar> </div>
+                               <div>
+                                   <p className="commentname">{name}<span>{" "}@{cutdate2(dd3)} {cutdate(dd4,17)} </span></p>
+                                   <p className="commentval">{comment}</p> 
+                               </div>
                            </div>
                        </div>
                                )
