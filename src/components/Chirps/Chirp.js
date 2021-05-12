@@ -8,9 +8,16 @@ import { auth, db } from '../../Firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollection } from 'react-firebase-hooks/firestore';
 import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
+import {useDispatch} from "react-redux"
+import {setmail} from "../../features/mailSlice"
+import { useHistory } from 'react-router';
 
 function Chirp({_id, message , timestamp , user , userimage , location , pic ,likes, email , mode , setIsOpen , setchirpid , comments }) {
     const [myuser] = useAuthState(auth);
+    const dispatch = useDispatch() 
+    const history = useHistory()
+
+
     const cutdate = (str, n) => {
         return str?.length > n ? str.substr(0, n - 1) : str;
     };
@@ -57,6 +64,16 @@ function Chirp({_id, message , timestamp , user , userimage , location , pic ,li
         setIsOpen(!mode)
         setchirpid(_id)
     }
+
+    const mailset = async () => {
+        await dispatch(setmail({
+            mail:email,
+            photo:userimage,
+            user:user,
+        })) 
+        history.push("./userprofiles")
+        console.log(email)
+    }
     
     const dd1 = new Date(timestamp?.toDate()).toUTCString('en-US') ;
     const dd2 = new Date(timestamp?.toDate()).toLocaleTimeString('en-US') 
@@ -66,7 +83,7 @@ function Chirp({_id, message , timestamp , user , userimage , location , pic ,li
         <div className="chirp_box">
             <div><Avatar className="userimage" src={userimage} alt="sdfsdf" >{user.charAt(0).toLocaleUpperCase()}</Avatar></div>
             <div className="chirpbox_details">
-                <div className="userdetails" ><b>{user}</b> <p className="timedetatils">{cutdate(dd1,17)} {cutdate2(dd2)}  </p></div>
+                <div className="userdetails" ><b onClick={mailset}>{user}</b> <p className="timedetatils">{cutdate(dd1,17)} {cutdate2(dd2)}  </p></div>
                 {location ? (<div className="loctdetails" > <LocationOnIcon/> {location}</div>) : (<div className="noloctdetails" > </div>) }
             </div>
         </div>

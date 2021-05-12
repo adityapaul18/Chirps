@@ -5,6 +5,9 @@
 
 }
 
+.userdetails >  b {
+    cursor: pointer;
+}
 .chirp_box{
     display: flex;
     padding: 15px;
