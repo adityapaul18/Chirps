@@ -18,11 +18,6 @@ function Otherprofile() {
     const [myuser] = useAuthState(auth);
     
     const [chirps,loading] = useCollection(db.collection("messages").orderBy("timestamp","desc"))
-    const cutdate3 = (str) => {
-        let l = str.length
-        return str.substr(0, l-12) ;
-    };
-    // const dd3 = myuser?.metadata.creationTime
     useEffect(() => {
        if(data === null) 
             history.push("./profile")
@@ -53,9 +48,6 @@ function Otherprofile() {
                         <p>{data?.user}</p>
                         {data?.mail}
                     </div> 
-                    {/* <div>
-                        joined at {cutdate3(dd3)}                        
-                    </div>                      */}
                 </div>   
                 </p>
             </div> 

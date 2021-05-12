@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Chirp.css'
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -31,7 +31,7 @@ function Chirp({_id, message , timestamp , user , userimage , location , pic ,li
         console.log("deleted")
 
     }
-     const [likedby,loading] = useCollection(db.collection("messages")?.doc(_id).collection("nlikes").orderBy("name","desc"))
+     const [likedby] = useCollection(db.collection("messages")?.doc(_id).collection("nlikes").orderBy("name","desc"))
     //  const [checkname, setcheckname] = useState("") 
 
     const likepost = async (myusern) => {
@@ -39,7 +39,7 @@ function Chirp({_id, message , timestamp , user , userimage , location , pic ,li
         let f = false;
         let checkname = ""
         await (likedby?.docs.map((usernm) => {
-            const {name ,id } = usernm.data() 
+            const {name} = usernm.data() 
             console.log(name)
             console.log(user)
             if(name === myuser.email ){
@@ -81,7 +81,7 @@ function Chirp({_id, message , timestamp , user , userimage , location , pic ,li
     
     <div className="post_box">
         <div className="chirp_box">
-            <div><Avatar className="userimage" src={userimage} alt="sdfsdf" >{user.charAt(0).toLocaleUpperCase()}</Avatar></div>
+            <div><Avatar className="userimage" onClick={mailset} src={userimage} alt="sdfsdf" >{user.charAt(0).toLocaleUpperCase()}</Avatar></div>
             <div className="chirpbox_details">
                 <div className="userdetails" ><b onClick={mailset}>{user}</b> <p className="timedetatils">{cutdate(dd1,17)} {cutdate2(dd2)}  </p></div>
                 {location ? (<div className="loctdetails" > <LocationOnIcon/> {location}</div>) : (<div className="noloctdetails" > </div>) }

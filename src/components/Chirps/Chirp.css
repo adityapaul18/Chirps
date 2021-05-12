@@ -2,7 +2,7 @@
     border-radius: 50px;
     width: 60px;
     background-color: #f5003d !important;
-
+    cursor:pointer;
 }
 
 .userdetails >  b {

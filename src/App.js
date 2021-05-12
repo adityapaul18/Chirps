@@ -1,21 +1,18 @@
+import React from "react";
 import './App.css';
 import Login from './components/Login/Login';
 import Navbar from './components/Navbar/Navbar';
-import React, { useState } from "react";
-import {  BrowserRouter as Router,Switch,Route} from "react-router-dom";
+import { BrowserRouter as Router,Switch,Route} from "react-router-dom";
 import { auth } from './Firebase';
 import { useAuthState } from "react-firebase-hooks/auth"
 import Homefeed from './components/HomeFeed/Homefeed.js';
 import Inputpage from './components/Inputpage/Inputpage';
 import Profilepage from './components/Profilepage/Profilepage';
-import Test from './components/test/Test';
-import bgl from "./images/tmp.jpg"
-import bgd from "./images/homedark.jpeg"
 import Otherprofile from './components/Otherprofile/Otherprofile';
 
 
 function App() {
-  const [user,loading] = useAuthState(auth);
+  const [user] = useAuthState(auth);
   
   return (
     <div className="App">
