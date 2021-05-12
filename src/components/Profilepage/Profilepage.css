@@ -16,7 +16,7 @@
     position: sticky;
     top: 15px;
     align-items: center;
-    z-index: 2;
+    /* z-index: 2; */
 }
 .top_hlogo{
     background-color: white;
@@ -107,7 +107,7 @@
     margin-top: -140px;
     position: sticky;
     top: 25px;
-    z-index: 2;
+    /* z-index: 2; */
 }
 .profile-left > .MuiButton-root{
     margin-top: 20px;

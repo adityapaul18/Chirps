@@ -96,6 +96,9 @@
 .commentdiv{
     display: flex;
 }
+.commentphoto{
+    background-color: coral !important;
+}
 @media (max-width:850px){
     .comment_box{
         flex-direction: column;

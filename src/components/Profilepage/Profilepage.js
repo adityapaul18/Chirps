@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useCollection } from 'react-firebase-hooks/firestore'
 import { auth, db } from '../../Firebase'
@@ -9,6 +9,7 @@ import { useHistory } from 'react-router'
 import Spinner from 'react-spinkit'
 import Thoughtbox from '../Thougthbox/Thoughtbox'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Test from '../test/Test'
 
 
 function Profilepage() {
@@ -25,9 +26,20 @@ function Profilepage() {
     const signout = () => {
         auth.signOut();
     }
+
+    const [modalIsOpen,setIsOpen] = useState(false);
+    const [chirpid, setchirpid] = useState("PLJe0D0DWrrXmAbJP2g8")
     return (
         <div className="profile__page">
-            <div className="profilecontainer" >
+             <div className="modalbox">     
+                     <Test 
+                          chirpid={chirpid}
+                          mode={modalIsOpen}
+                          setIsOpen={setIsOpen}
+                          setchirpid={setchirpid}
+                     />                    
+                </div>
+            <div className="profilecontainer" style={{zIndex:modalIsOpen? 0 : 2}} >
                 <Avatar className="profile_avatar2" src={myuser.photoURL} alt={myuser.displayName}/>
                 <p>  
                 <div className="profile_header">
@@ -44,7 +56,7 @@ function Profilepage() {
             <div className="hidder">            </div>
             <div className="profile_lower">
                 
-            <div className="profile-left" >        
+            <div className="profile-left" style={{zIndex:modalIsOpen? 0 : 2}} >        
                 <Avatar className="profile_avatar" src={myuser.photoURL} alt={myuser.displayName}>{myuser?.displayName.charAt(0).toLocaleUpperCase()}</Avatar>
                 <Button onClick={() => {history.push("./")}} variant="contained">Home</Button>
                 <Button onClick={() => {history.push("./profile")}} variant="contained">Profile</Button>
@@ -77,6 +89,8 @@ function Profilepage() {
                         pic={image}
                         likes={likes}
                         email={mailid}
+                        setIsOpen={setIsOpen}
+                        setchirpid={setchirpid}
                         />
                         )
                     }

@@ -65,7 +65,7 @@ function Test({chirpid,mode,setchirpid,setIsOpen}) {
                            return(
                                <div className="comments">
                            <div className="commentdiv" >
-                               <div><Avatar src={photo} >{ name?.charAt(0).toLocaleUpperCase()}</Avatar> </div>
+                               <div><Avatar className="commentphoto" src={photo} >{ name?.charAt(0).toLocaleUpperCase()}</Avatar> </div>
                                <div>
                                    <p className="commentname">{name}<span>{" "}@{cutdate2(dd3)} {cutdate(dd4,17)} </span></p>
                                    <p className="commentval">{comment}</p> 
