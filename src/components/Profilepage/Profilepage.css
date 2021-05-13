@@ -38,7 +38,7 @@
     height: 130px !important;
     margin-top: 90px;
     display: none !important;
-    z-index: 1;
+    /* z-index: 1; */
     background-color: #0166C0 !important;
 
 }
@@ -181,7 +181,7 @@
         width: 100%;
         position: sticky;
         top: 150px;
-        z-index: 1;
+        /* z-index: 1; */
     }
 }
 @media (max-width: 700px){
@@ -221,6 +221,6 @@
         width: 100%;
         position: sticky;
         top: 105px;
-        z-index: 1;
+        /* z-index: 1; */
     }
 }

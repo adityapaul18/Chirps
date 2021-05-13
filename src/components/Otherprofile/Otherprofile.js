@@ -41,7 +41,7 @@ function Otherprofile() {
                      />                    
                 </div>
             <div className="profilecontainer" style={{zIndex:modalIsOpen? 0 : 2}} >
-                <Avatar className="profile_avatar2" src={myuser.photoURL} alt={myuser.displayName}/>
+                <Avatar className="profile_avatar2" src={data?.photo} alt={myuser.displayName}>{data?.user.charAt(0).toLocaleUpperCase()}</Avatar>
                 <p>  
                 <div className="profile_header">
                     <div>
@@ -51,7 +51,7 @@ function Otherprofile() {
                 </div>   
                 </p>
             </div> 
-            <div className="hidder">            </div>
+            <div className="hidder"  style={{zIndex:modalIsOpen? 0 : 1}}>            </div>
             <div className="profile_lower">
                 
             <div className="profile-left" style={{zIndex:modalIsOpen? 0 : 2}} >        

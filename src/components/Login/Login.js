@@ -13,19 +13,34 @@ function Login() {
     const signin2 = () => {
         auth.signInWithEmailAndPassword(mail,password).then(() => {
             console.log("under improvement ,  plz login with google :)")
-        })
+        }).catch((err) => alert("password and mail do not match"))
+
+        setpassword("")
     }
     const signin = (e) => {
         e.preventDefault();
-        auth.signInWithPopup(provider).catch((error) => alert("error signing up"))
+        auth.signInWithPopup(provider).catch((err) => alert("error signing up"))
     }
     const signup = async () => {
+        if(name==="" || mail==="" || password===""){
+            alert("plz fill up all the fields")
+            return;
+        }
+            
         await auth.createUserWithEmailAndPassword(mail,password).then((userAuth) => {
             userAuth.user
               .updateProfile({
                 displayName: name,
-            }).catch((err) => {console.log(err)})
-        })
+            })
+        }).catch((err) => {
+                var errMessage = err.message;
+                alert(errMessage)
+            setname("")
+            setmail("")
+            setpassword("")
+            }
+            )
+
         console.log(name)
         console.log(mail)
         console.log(profilepic)
