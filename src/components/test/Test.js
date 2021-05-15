@@ -45,14 +45,14 @@ function Test({chirpid,mode,setchirpid,setIsOpen}) {
         let l = str.length
         return str.substr(0, l-6) + str.substr(l-3,l);
     };
-    const img = (reqdoc?.data().image || user?.photoURL)
+    const img = (reqdoc?.data().image)
     const pic = user?.photoURL
     return (
         <div>
             <ReactModal style={customStyles} isOpen={mode}>
             <div className="comment_box">
                 <HighlightOffIcon className="closer" onClick={() => {setIsOpen(!mode)}} />
-                <div className="mimage_contain" style={{backgroundImage: `url(${img || pic })`}}>
+                <div className="mimage_contain" style={{backgroundImage: `url(${img ||"https://www.motherjones.com/wp-content/uploads/2019/05/20190529_Comments_2002.png?w=1200&h=630&crop=1"|| pic })`}}>
                     <div></div>
                     {/* <img className="modalimage" src="https://images-na.ssl-images-amazon.com/images/I/812phqzj4AL._AC_SX679_.jpg" alt=""/> */}
                 </div>

@@ -12,7 +12,7 @@ import FileBase from 'react-file-base64';
 function Login() {
     const signin2 = () => {
         auth.signInWithEmailAndPassword(mail,password).then(() => {
-            console.log("under improvement ,  plz login with google :)")
+            // console.log("under improvement ,  plz login with google :)")
         }).catch((err) => alert("password and mail do not match"))
 
         setpassword("")
@@ -22,7 +22,7 @@ function Login() {
         auth.signInWithPopup(provider).catch((err) => alert("error signing up"))
     }
     const signup = async () => {
-        if(name==="" || mail==="" || password===""){
+        if(!name || mail==="" || password==="" || !/\S/.test(name)|| !/\S/.test(mail)|| !/\S/.test(password)){
             alert("plz fill up all the fields")
             return;
         }
@@ -91,7 +91,7 @@ function Login() {
                         <p>Lets get you registered</p>
                         <Avatar className="signup_image">{name.charAt(0).toLocaleUpperCase() || "P"}</Avatar>
                         <TextField variant="outlined" label="Name" value={name} onChange={(e) => setname(e.target.value)}/>
-                        <TextField variant="outlined" label="Email" value={mail} onChange={(e) => setmail(e.target.value)}/>
+                        <TextField variant="outlined" label="Email" value={mail} onChange={(e) => setmail(e.target.value)} type="email"/>
                         <TextField variant="outlined" label="Password" value={password} onChange={(e) => setpassword(e.target.value)} type="password"/>  
                         <Button variant="contained" className="loginbutton2" onClick={signup} >Sign Up</Button>
                         <Button variant="contained" className="loginbutton" onClick={signin} ><img className="glogo" src={logog} alt=""/>Login with Google</Button>

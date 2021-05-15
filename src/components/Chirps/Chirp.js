@@ -94,7 +94,10 @@ function Chirp({_id, message , timestamp , user , userimage , location , pic ,li
             ) :(
                 <div></div>
             )}
-                <div className="messagedetails" >{message}</div>
+        {pic? (<> <div className="messagedetails" >{message}</div></>):
+        (<> <div className="messagedetails" id="nopiic" >{message}</div></>)
+
+        }      
     </div>
                 <div className="chirpoptions" >
                     <Button onClick={() => {likepost(myuser)}} className="likebtn"> <ThumbUpIcon/>{likes?.length}{"   "}Like</Button>
