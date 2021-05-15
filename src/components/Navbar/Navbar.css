@@ -13,6 +13,9 @@
     color: black !important;
     /* padding-right: 20px; */
 }
+.avatar{
+    background-color: #f5003d !important;
+}
 .mainhead > img {
     /* margin: auto; */
     height: 110px;

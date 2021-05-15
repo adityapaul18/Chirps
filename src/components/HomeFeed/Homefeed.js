@@ -23,7 +23,7 @@ function Homefeed() {
         }
     };
     const [modalIsOpen,setIsOpen] = useState(false);
-    const [chirpid, setchirpid] = useState("PLJe0D0DWrrXmAbJP2g8")
+    const [chirpid, setchirpid] = useState("NTeOEWmdNwq2mnO2XPc6")
     
     return (
         <div className="homepage" >

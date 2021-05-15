@@ -41,7 +41,7 @@ function Otherprofile() {
                      />                    
                 </div>
             <div className="profilecontainer" style={{zIndex:modalIsOpen? 0 : 2}} >
-                <Avatar className="profile_avatar2" src={data?.photo} alt={myuser.displayName}>{data?.user.charAt(0).toLocaleUpperCase()}</Avatar>
+                <Avatar className="profile_avatar2" src={data?.photo || "https://st2.depositphotos.com/1032921/5237/v/600/depositphotos_52374307-stock-illustration-blue-profile-icon.jpg"} alt={myuser.displayName}>{data?.user.charAt(0).toLocaleUpperCase()}</Avatar>
                 <p>  
                 <div className="profile_header">
                     <div>
@@ -55,7 +55,7 @@ function Otherprofile() {
             <div className="profile_lower">
                 
             <div className="profile-left" style={{zIndex:modalIsOpen? 0 : 2}} >        
-                <Avatar className="profile_avatar" src={data?.photo} alt={myuser.displayName}>{data?.user.charAt(0).toLocaleUpperCase()}</Avatar>
+                <Avatar className="profile_avatar" src={data?.photo || "https://st2.depositphotos.com/1032921/5237/v/600/depositphotos_52374307-stock-illustration-blue-profile-icon.jpg"} alt={myuser.displayName}>{data?.user.charAt(0).toLocaleUpperCase()}</Avatar>
                 <Button onClick={() => {history.push("./")}} variant="contained">Home</Button>
                 <Button onClick={() => {history.push("./profile")}} variant="contained">Profile</Button>
                 <Button variant="contained"><a href="https://github.com/adityapaul18/Chirps">Github</a></Button>

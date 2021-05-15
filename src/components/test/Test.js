@@ -12,8 +12,6 @@ import firebase from 'firebase'
 function Test({chirpid,mode,setchirpid,setIsOpen}) {
     const [user] = useAuthState(auth);
     setchirpid(chirpid)
-    const [reqdoc,loading] = useCollection(db.collection("messages").doc(chirpid))
-    const [reqcom,loadig] = useCollection(db.collection("messages").doc(chirpid).collection("comments").orderBy("timestamp","asc"))
     
     
     const [comment,setcomment] = useState("");
@@ -22,6 +20,9 @@ function Test({chirpid,mode,setchirpid,setIsOpen}) {
             marginTop          : '70px',
         }
     };
+    const [reqdoc,loading] = useCollection(db.collection("messages").doc(chirpid))
+    const [reqcom,loadig] = useCollection(db.collection("messages").doc(chirpid).collection("comments").orderBy("timestamp","asc"))
+    
     const addcomment = async () => {
         if(!comment){
             alert("plz add a comment")
@@ -45,7 +46,7 @@ function Test({chirpid,mode,setchirpid,setIsOpen}) {
         let l = str.length
         return str.substr(0, l-6) + str.substr(l-3,l);
     };
-    const img = (reqdoc?.data().image)
+    const img = (reqdoc?.data().image || user?.photoURL)
     const pic = user?.photoURL
     return (
         <div>

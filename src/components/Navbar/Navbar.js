@@ -16,7 +16,7 @@ function Navbar() {
     return (
     <>
         <div className="mainhead">
-            <Avatar onClick={showSidebar} className="avatar" src={user.photoURL} />
+            <Avatar onClick={showSidebar} className="avatar" src={user.photoURL} >{user.displayName.charAt(0).toLocaleUpperCase()}</Avatar>
             <img className="topimghead" src={image} alt="nohead"/>
             <Link to='/chirp'> <AddIcon className="icons"/></Link>       
         </div>

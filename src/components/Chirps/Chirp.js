@@ -26,7 +26,7 @@ function Chirp({_id, message , timestamp , user , userimage , location , pic ,li
         return str.substr(0, l-6) + str.substr(l-3,l);
     };
     const deletepost = async () => {
-        await setchirpid("ncCSsqNrLzSWcf8Xx6oN")
+        await setchirpid("NTeOEWmdNwq2mnO2XPc6")
         db.collection("messages").doc(_id).delete();
         console.log("deleted")
 

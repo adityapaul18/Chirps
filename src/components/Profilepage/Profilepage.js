@@ -40,7 +40,7 @@ function Profilepage() {
                      />                    
                 </div>
             <div className="profilecontainer" style={{zIndex:modalIsOpen? 0 : 2}} >
-                <Avatar className="profile_avatar2" src={myuser.photoURL} alt={myuser.displayName}/>
+                <Avatar className="profile_avatar2" src={myuser.photoURL || "https://st2.depositphotos.com/1032921/5237/v/600/depositphotos_52374307-stock-illustration-blue-profile-icon.jpg"} alt={myuser.displayName}>{myuser.displayName.charAt(0).toLocaleUpperCase()}</Avatar>
                 <p>  
                 <div className="profile_header">
                     <div>

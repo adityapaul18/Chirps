@@ -22,7 +22,7 @@ function Sidemenu({sidebar , setSidebar}) {
     return (
         <div className="sidemenu_main">
            <div className="sidemenu_top">
-                    <Avatar className="sidemenu_avatar" src={user.photoURL} >{user?.displayName.charAt(0).toLocaleUpperCase()}</Avatar>                    
+                    <Avatar className="sidemenu_avatar" src={user.photoURL || "https://st2.depositphotos.com/1032921/5237/v/600/depositphotos_52374307-stock-illustration-blue-profile-icon.jpg"} >{user?.displayName.charAt(0).toLocaleUpperCase()}</Avatar>                    
                 <div>
                     <span className="user__image" >{user.displayName}</span>
                 </div>
