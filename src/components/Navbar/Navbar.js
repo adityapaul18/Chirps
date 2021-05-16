@@ -16,7 +16,7 @@ function Navbar() {
     return (
     <>
         <div className="mainhead">
-            <Avatar onClick={showSidebar} className="avatar" src={user.photoURL} >{user.displayName.charAt(0).toLocaleUpperCase()}</Avatar>
+            <Avatar onClick={showSidebar} className="avatar" src={user.photoURL || "https://st2.depositphotos.com/1032921/5237/v/600/depositphotos_52374307-stock-illustration-blue-profile-icon.jpg"} >{user.displayName.charAt(0).toLocaleUpperCase()}</Avatar>
             <img className="topimghead" src={image} alt="nohead"/>
             <Link to='/chirp'> <AddIcon className="icons"/></Link>       
         </div>

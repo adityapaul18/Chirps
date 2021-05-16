@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { auth, db } from '../../Firebase'
 import './Inputpage.css'
@@ -13,6 +13,7 @@ function Inputpage() {
     const [img,setimg] =useState("")
     const history = useHistory();
     const [user] = useAuthState(auth);
+    const fileref = useRef(null)
     const addchirp = async (e) => {
         e.preventDefault();
         
@@ -46,10 +47,11 @@ function Inputpage() {
                     <div className="post_imgcont" onClick={() => {setimg("")}} style={{backgroundImage: `url(${img || "https://firebase.google.com/images/social.png"})`}}></div>
                     {/* <div className="inputcontainers" ><input id="chirp" placeholder="Whats on your mind ?" autocomplete="off" value={chirp} onChange={(e) => setchirp(e.target.value)} /></div> */}
                     {/* <div className="inputcontainers" ><input id="loct" placeholder="Add location"  autocomplete="off" value={loct} onChange={(e) => setloct(e.target.value)} /></div> */}
-                    <TextField variant="outlined" label="Add a caption" value={chirp} onChange={(e) => setchirp(e.target.value)}/>
+                    <TextField variant="outlined" label="Add a thought" value={chirp} onChange={(e) => setchirp(e.target.value)}/>
                     <TextField variant="outlined"  label="Tag Location" value={loct} onChange={(e) => setloct(e.target.value)} />
-                    <div className="inputimager"><FileBase type="file" value={img} multiple={false} onDone={({ base64 }) => setimg(base64)} /> </div>
+                    <div className="inputimager" ><FileBase  ref={fileref} type="file" value={img} multiple={false} onDone={({ base64 }) => setimg(base64)} hidden={true} /> </div>
                 </div>
+                    <Button onClick={() => fileref.current.click()} variant="contained">Add photo</Button>
                 <div className="submit_button"><Button variant="contained" className="submitbutton" type="submit" onClick={addchirp}>Chirp</Button> </div>
             </form> 
         </div>
