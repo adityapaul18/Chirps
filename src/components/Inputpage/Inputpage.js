@@ -37,6 +37,10 @@ function Inputpage() {
         setimg("");
     }  
 
+    const uploadimg = () => {
+
+    }
+
 
     return ( 
         <>
@@ -44,13 +48,12 @@ function Inputpage() {
             <form className="inputform">
                 <div>
                     <div className="post_imgcont" onClick={() => {setimg("")}} style={{backgroundImage: `url(${img || "https://firebase.google.com/images/social.png"})`}}></div>
-                    {/* <div className="inputcontainers" ><input id="chirp" placeholder="Whats on your mind ?" autocomplete="off" value={chirp} onChange={(e) => setchirp(e.target.value)} /></div> */}
-                    {/* <div className="inputcontainers" ><input id="loct" placeholder="Add location"  autocomplete="off" value={loct} onChange={(e) => setloct(e.target.value)} /></div> */}
                     <TextField variant="outlined" label="Add a caption" value={chirp} onChange={(e) => setchirp(e.target.value)}/>
                     <TextField variant="outlined"  label="Tag Location" value={loct} onChange={(e) => setloct(e.target.value)} />
                     <div className="inputimager"><FileBase type="file" value={img} multiple={false} onDone={({ base64 }) => setimg(base64)} /> </div>
                 </div>
                 <div className="submit_button"><Button variant="contained" className="submitbutton" type="submit" onClick={addchirp}>Chirp</Button> </div>
+                {/* <div className="submit_button"><Button variant="contained" className="submitbutton" type="submit" onClick={uploadimg}>Chirp</Button> </div> */}
             </form> 
         </div>
         </>
