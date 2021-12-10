@@ -43,6 +43,9 @@
     margin: auto;
 }
 .submit_button{
+    display: flex;
+    width: 100%;
+    flex-direction: row !important;
     padding-top: 25px;
 }
 input{
